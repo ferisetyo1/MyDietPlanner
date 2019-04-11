@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "316665384891",
+    "firebase_url": "https://mydietplanner-7f345.firebaseio.com",
+    "project_id": "mydietplanner-7f345",
+    "storage_bucket": "mydietplanner-7f345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316665384891:android:4bb26acca83e877e",
+        "android_client_info": {
+          "package_name": "feri.com.mydietplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316665384891-b2kgjlpb8dqui02pa225gohtgpnb3ikj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "feri.com.mydietplanner",
+            "certificate_hash": "dbf0033389d6fb58f0595dfc9b4323c377031169"
+          }
+        },
+        {
+          "client_id": "316665384891-fctmsbsj3duc311igba2iuk8cb76l4t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7GYeT_OSWf-3tGebTGW5EEEmR5sYYEHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316665384891-fctmsbsj3duc311igba2iuk8cb76l4t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
