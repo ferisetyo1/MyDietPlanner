@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
@@ -46,8 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         String password=in_password.getText().toString();
 
         if(TextUtils.isEmpty(email)||TextUtils.isEmpty(password)){
-            in_email.setError("Masukan email anda");
-            in_password.setError("Masukan password anda");
+            in_email.setError("Email masih kosong");
+            in_password.setError("Password masih kosong");
         }else {
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -57,24 +58,21 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
-                            } else {
-                                try {
-                                    throw task.getException();
-                                } catch (FirebaseAuthException e) {
-                                    Log.e("print error :", e.getErrorCode());
-                                    if (e.getErrorCode() == "ERROR_WRONG_PASSWORD") {
-                                        in_password.setError("password yang anda masukkan salah");
-                                    } else if (e.getErrorCode() == "ERROR_USER_NOT_FOUND") {
-                                        in_email.setError("email tidak terdaftar, periksa kembali email anda");
-                                    }
-                                } catch (FirebaseNetworkException e) {
-                                    Log.e("print error :", e.getMessage());
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
                             }
                         }
-                    });
+                    }).addOnFailureListener(this, new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    String exception=((FirebaseAuthException) e).getErrorCode();
+                    if (exception.equals("ERROR_WRONG_PASSWORD")) {
+                        in_password.setError("password yang anda masukkan salah");
+                    } else if (exception.equals("ERROR_USER_NOT_FOUND")) {
+                        in_email.setError("email tidak terdaftar, periksa kembali email anda");
+                    }else {
+                        Log.d("error :",exception);
+                    }
+                }
+            });
         }
     }
 
@@ -83,6 +81,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void lupapassword(View view) {
-
+        startActivity(new Intent(getApplicationContext(),ResetPasswordActivity.class));
     }
 }

@@ -33,7 +33,6 @@
             android:id="@+id/in_password"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/in_email"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword" />
@@ -43,7 +42,6 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:onClick="login"
-            android:layout_below="@id/in_password"
             android:text="Login" />
 
         <TextView
