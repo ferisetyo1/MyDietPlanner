@@ -31,6 +31,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
+        mAuth = FirebaseAuth.getInstance();
         in_resetpassword = (EditText) findViewById(R.id.in_resetpassword);
         btn_resetpassword = (Button) findViewById(R.id.btn_resetpassword);
         dialog = new Dialog(this);
@@ -63,9 +64,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 finish();
+                dialog.dismiss();
             }
         });
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
 }
