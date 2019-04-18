@@ -21,6 +21,13 @@
             />
 
         <EditText
+            android:id="@+id/in_nama"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="nama" />
+
+        <EditText
             android:id="@+id/in_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
