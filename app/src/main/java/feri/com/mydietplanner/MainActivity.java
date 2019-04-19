@@ -74,4 +74,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
+
+    public void cektipsandbmi(View view) {
+        startActivity(new Intent(getApplicationContext(),CekBMIandTips.class));
+    }
+
+    public void FoodList(View view) {
+        startActivity(new Intent(getApplicationContext(),FoodActivity.class));
+    }
 }
