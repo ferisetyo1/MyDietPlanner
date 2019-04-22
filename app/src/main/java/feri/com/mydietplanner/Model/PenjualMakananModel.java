@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Model;
 
 public class PenjualMakananModel {
     private String nama;

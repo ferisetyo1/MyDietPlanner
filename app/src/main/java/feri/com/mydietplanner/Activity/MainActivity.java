@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import feri.com.mydietplanner.R;
+import feri.com.mydietplanner.Model.UserModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -76,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cektipsandbmi(View view) {
-        startActivity(new Intent(getApplicationContext(),CekBMIandTips.class));
+        startActivity(new Intent(getApplicationContext(), CekBMIandTipsActivity.class));
     }
 
     public void FoodList(View view) {
-        startActivity(new Intent(getApplicationContext(),FoodActivity.class));
+        startActivity(new Intent(getApplicationContext(), FoodActivity.class));
     }
 }

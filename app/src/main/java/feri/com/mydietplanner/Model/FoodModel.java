@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Model;
 
 import android.support.annotation.NonNull;
 import android.util.Log;

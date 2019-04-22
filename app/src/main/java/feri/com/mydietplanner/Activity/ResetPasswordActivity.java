@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Activity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+
+import feri.com.mydietplanner.Activity.LoginActivity;
+import feri.com.mydietplanner.R;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 
@@ -60,7 +63,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         btn_backLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
                 dialog.dismiss();
             }

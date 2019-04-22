@@ -14,6 +14,6 @@
         android:id="@+id/btn_backLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="kemabil ke menu login"/>
+        android:text="kembali ke menu login"/>
 
 </LinearLayout>

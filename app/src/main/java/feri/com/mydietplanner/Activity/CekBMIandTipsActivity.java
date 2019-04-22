@@ -1,11 +1,13 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CekBMIandTips extends AppCompatActivity {
+import feri.com.mydietplanner.R;
+
+public class CekBMIandTipsActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
 

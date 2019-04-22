@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -17,6 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import feri.com.mydietplanner.Model.FoodModel;
+import feri.com.mydietplanner.Model.PenjualMakananModel;
+import feri.com.mydietplanner.R;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHolder> {
 

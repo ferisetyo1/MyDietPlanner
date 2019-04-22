@@ -1,4 +1,4 @@
-package feri.com.mydietplanner;
+package feri.com.mydietplanner.Activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,10 +13,11 @@ import android.widget.EditText;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+
+import feri.com.mydietplanner.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -46,10 +47,17 @@ public class LoginActivity extends AppCompatActivity {
         String email=in_email.getText().toString();
         String password=in_password.getText().toString();
 
-        if(TextUtils.isEmpty(email)||TextUtils.isEmpty(password)){
+        if(TextUtils.isEmpty(email)){
             in_email.setError("Email masih kosong");
+            in_email.requestFocus();
+            return;
+        }
+        if (TextUtils.isEmpty(password)){
             in_password.setError("Password masih kosong");
-        }else {
+            in_password.requestFocus();
+            return;
+        }
+        else {
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
@@ -77,10 +85,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void register(View view) {
-        startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
+        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
     }
 
     public void lupapassword(View view) {
-        startActivity(new Intent(getApplicationContext(),ResetPasswordActivity.class));
+        startActivity(new Intent(getApplicationContext(), ResetPasswordActivity.class));
     }
 }
