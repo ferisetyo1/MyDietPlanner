@@ -8,8 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,20 +46,26 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(@NonNull FoodAdapter.CustomViewHolder customViewHolder, int i) {
-        final String namaMakanan=this.foodModels.get(i).getNama();
-        final Long hargaMakanan=this.foodModels.get(i).getHarga();
-        final CustomViewHolder cvh=customViewHolder;
-        Log.d("namaMakanan",this.foodModels.get(i).getFoodKey());
+        String namaMakanan = this.foodModels.get(i).getNama();
+        String deskripsi = this.foodModels.get(i).getDeskripsi();
+        String img_url = this.foodModels.get(i).getImg_url();
+        int kalori = this.foodModels.get(i).getKalori();
+        String foodkey = this.foodModels.get(i).getFoodKey();
+        final CustomViewHolder cvh = customViewHolder;
+        Log.d("namaMakanan", this.foodModels.get(i).getFoodKey());
         customViewHolder.nama.setText(namaMakanan);
-        customViewHolder.harga.setText(String.valueOf(hargaMakanan));
+        customViewHolder.kalori.setText(String.valueOf(kalori));
+        customViewHolder.deskripsi.setText(deskripsi);
+        //img set
+        Glide.with(context).load(img_url).into(customViewHolder.food_img);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference PenjualRef = database.getReference("Foods").child(this.foodModels.get(i).getFoodKey()).child("penjual");
+        DatabaseReference PenjualRef = database.getReference("Foods").child(foodkey).child("penjual");
         PenjualRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ArrayList <PenjualMakananModel> penjualMakananModels = new ArrayList<>();
-                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                ArrayList<PenjualMakananModel> penjualMakananModels = new ArrayList<>();
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     PenjualMakananModel penjualMakananModel = dataSnapshot1.getValue(PenjualMakananModel.class);
                     penjualMakananModels.add(penjualMakananModel);
                 }
@@ -73,9 +81,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
         });
     }
 
-    public void addItem(ArrayList<FoodModel> mData){
+    public void addItem(ArrayList<FoodModel> mData) {
         this.foodModels = mData;
-        Log.d("testtt",foodModels.get(0).getNama());
+        Log.d("testtt", foodModels.get(0).getNama());
         notifyDataSetChanged();
     }
 
@@ -85,17 +93,21 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
-        private TextView nama,harga;
+        private TextView nama, kalori,deskripsi;
+        private ImageView food_img;
         private RecyclerView rv_penjual;
         private PenjualMakananAdapter penjualMakananAdapter;
+
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nama = (TextView) itemView.findViewById(R.id.nama_makanan);
-            harga=(TextView) itemView.findViewById(R.id.harga);
-            rv_penjual=(RecyclerView) itemView.findViewById(R.id.rv_penjualmakanan);
+            kalori = (TextView) itemView.findViewById(R.id.kalori_makanan);
+            deskripsi=(TextView)itemView.findViewById(R.id.deskripsi_makanan);
+            food_img=(ImageView)itemView.findViewById(R.id.food_image);
+            rv_penjual = (RecyclerView) itemView.findViewById(R.id.rv_penjualmakanan);
             rv_penjual.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
-            penjualMakananAdapter=new PenjualMakananAdapter(itemView.getContext());
+            penjualMakananAdapter = new PenjualMakananAdapter(itemView.getContext());
         }
     }
 }

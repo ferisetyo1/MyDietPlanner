@@ -39,8 +39,10 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
         String nama = penjualMakananModels.get(i).getNama();
         int lat=penjualMakananModels.get(i).getLat();
         int long_=penjualMakananModels.get(i).getLong();
+        String harga = String.valueOf(penjualMakananModels.get(i).getHarga());
 
         customViewHolder.txt_nama.setText(nama);
+        customViewHolder.txt_harga.setText(harga);
     }
 
     @Override
@@ -56,12 +58,13 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         private Button lihat_map;
-        private TextView txt_nama;
+        private TextView txt_nama,txt_harga;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             lihat_map=(Button) itemView.findViewById(R.id.btn_lihat_map);
             txt_nama=(TextView)itemView.findViewById(R.id.nama_penjual);
+            txt_harga=(TextView)itemView.findViewById(R.id.harga);
         }
     }
 }

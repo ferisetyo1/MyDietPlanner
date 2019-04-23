@@ -13,6 +13,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <ImageView
+                android:id="@+id/food_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/nama_makanan"
                 android:layout_width="wrap_content"
@@ -20,12 +24,17 @@
                 android:text="nama_makanan"
                 />
             <TextView
-                android:id="@+id/harga"
+                android:id="@+id/kalori_makanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="harga_makanan"
+                android:text="kalori_makanan"
                 />
-
+            <TextView
+                android:id="@+id/deskripsi_makanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nama_makanan"
+                />
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_penjualmakanan"
                 android:layout_width="wrap_content"

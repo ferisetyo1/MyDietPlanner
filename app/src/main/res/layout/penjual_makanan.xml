@@ -10,6 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="nama penjual"/>
+    <TextView
+        android:id="@+id/harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nama penjual"/>
     <Button
         android:id="@+id/btn_lihat_map"
         android:layout_width="wrap_content"
