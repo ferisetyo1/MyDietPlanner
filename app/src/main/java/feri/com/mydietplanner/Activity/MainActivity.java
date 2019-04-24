@@ -1,5 +1,7 @@
 package feri.com.mydietplanner.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -84,5 +86,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void FoodList(View view) {
         startActivity(new Intent(getApplicationContext(), FoodActivity.class));
+    }
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are You Sure Want to Exit?")
+                .setCancelable(true)//tidak bisa tekan tombol back
+                //jika pilih yess
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        moveTaskToBack(true);
+                        finish();
+                    }
+                })
+                //jika pilih no
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
     }
 }
