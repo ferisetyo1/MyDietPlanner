@@ -1,6 +1,5 @@
 package feri.com.mydietplanner.Activity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,7 +25,6 @@ import feri.com.mydietplanner.Model.UserModel;
 public class RegisterActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    ProgressDialog pg;
 
     Button btn_register;
     EditText in_email, in_password, in_repassword, in_nama;
@@ -71,10 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
                             //insert data ke databse
                             reference.setValue(userModel);
 
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                            Toast.makeText(getApplicationContext(), "Register Berhasil", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
-
                         }
                     }
                 }).addOnFailureListener(this, new OnFailureListener() {
@@ -82,35 +77,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 String exception = ((FirebaseAuthException) e).getErrorCode();
                 if (exception.equals("ERROR_EMAIL_ALREADY_IN_USE")) {
-                    Toast.makeText(getApplicationContext(), "Email Telah Digunakan", Toast.LENGTH_LONG).show();
+                    in_email.setError("email telah digunakan");
                 } else {
                     Log.d("error code", exception);
                 }
             }
         });
-        pg = new ProgressDialog(RegisterActivity.this);
-        pg.setMessage("Loading...");
-        pg.setTitle("Harap Tunggu");
-        pg.setProgressStyle(pg.STYLE_SPINNER);
-        pg.show();
-        pg.setCancelable(false);
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                pg.dismiss();
-            }
-        }).start();
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if ( pg!=null && pg.isShowing() ){
-            pg.cancel();
-        }
+
     }
 
     private void checkfield() {
