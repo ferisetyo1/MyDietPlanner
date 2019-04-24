@@ -4,61 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     tools:context=".Activity.LoginActivity"
-    android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/login_ic"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/user"
-            />
+            android:layout_marginTop="30dp"
+            android:paddingTop="50dp"
+            android:src="@drawable/logo"
+            android:adjustViewBounds="true"/>
+        <TextView
+            android:id="@+id/title_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyDietPlanner"
+            android:textSize="28sp"/>
 
         <EditText
             android:id="@+id/in_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="email"
-            android:inputType="textEmailAddress" />
+            android:layout_marginTop="50dp"
+            android:drawableLeft="@drawable/email"
+            android:background="@drawable/background_edit_text"
+            android:hint="Email"
+            android:textColorHint="@android:color/black"
+            android:inputType="textEmailAddress"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/in_password"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="textPassword" />
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/password"
+            android:background="@drawable/background_edit_text"
+            android:hint="Password"
+            android:textColorHint="@android:color/black"
+            android:inputType="textPassword"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:onClick="login"
-            android:backgroundTint="#2ecc71"
             android:text="Login" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="tidak punya akun? register"
-            android:id="@+id/textuntukregister"
             android:textStyle="bold"
-            />
+            android:clickable="true"
+            android:onClick="register"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lupa password"
             android:textStyle="bold"
-            android:id="@+id/textuntuklupapass"
-            />
+            android:clickable="true"
+            android:onClick="lupapassword"/>
+
     </LinearLayout>
 
 </LinearLayout>

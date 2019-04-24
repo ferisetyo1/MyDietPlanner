@@ -1,5 +1,30 @@
 <resources>
     <string name="app_name">MyDietPlanner</string>
-    <string name="title_home">Home</string>
-    <string name="title_account">Account</string>
+
+
+    <!--menu navigation bar-->
+    <string name="menu_home">Beranda</string>
+    <string name="menu_profil">Profil</string>
+
+    <!--fragment profil-->
+    <string name="btn_edit">Edit Profil</string>
+    <string name="nama">Parto</string>
+    <string name="lokasi">Klojen, Malang</string>
+    <string name="title_bio">Bio</string>
+    <string name="txt_bio">Aku ingin sendiri</string>
+    <string name="title_email">Email</string>
+    <string name="txt_email">test@gmail.com</string>
+    <string name="title_telp">No. Telepon</string>
+    <string name="txt_telp">082642182882</string>
+    <string name="title_umur">Umur</string>
+    <string name="txt_umur">17 tahun</string>
+    <string name="title_berat">Berat</string>
+    <string name="txt_berat">57kg</string>
+    <string name="title_tinggi">Tinggi</string>
+    <string name="txt_tinggi">160cm</string>
+    <string name="btn_logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
