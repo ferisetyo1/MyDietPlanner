@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void toRegister(){
-        TextView textView = (TextView) findViewById(R.id.textuntukregister);
+        TextView textView = (TextView) findViewById(R.id.txt_register);
         textView.setText("Belum memiliki akun? Register");
 // Membuat span dengan tampilan berbeda dan dapat diklik
         new PatternEditableBuilder().
@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void toForgetPassword(){
-        TextView textView = (TextView) findViewById(R.id.textuntuklupapass);
+        TextView textView = (TextView) findViewById(R.id.txt_lupapass);
         textView.setText("Lupa Password");
 // Membuat span dengan tampilan berbeda dan dapat diklik
         new PatternEditableBuilder().

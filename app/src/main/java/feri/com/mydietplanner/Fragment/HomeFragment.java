@@ -48,5 +48,6 @@ public class HomeFragment extends Fragment {
     public void logout(View view) {
         mAuth.signOut();
         startActivity(new Intent(getContext(), LoginActivity.class));
+
     }
 }
