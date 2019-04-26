@@ -23,7 +23,7 @@ import feri.com.mydietplanner.Activity.LoginActivity;
 import feri.com.mydietplanner.Model.UserModel;
 import feri.com.mydietplanner.R;
 
-public class AccountFragment extends Fragment {
+public class ProfilFragment extends Fragment {
     View v;
 
     TextView txt_nama, txt_email, txt_umur, txt_berat, txt_tinggi;
@@ -35,7 +35,7 @@ public class AccountFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v= (View) inflater.inflate(R.layout.fragment_account,container,false);
+        v= (View) inflater.inflate(R.layout.fragment_profil,container,false);
         txt_nama = (TextView) v.findViewById(R.id.txt_nama);
         txt_email = (TextView) v.findViewById(R.id.txt_email);
         txt_umur = (TextView) v.findViewById(R.id.txt_umur);

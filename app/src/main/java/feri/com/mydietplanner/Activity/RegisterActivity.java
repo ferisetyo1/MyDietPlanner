@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                             DatabaseReference reference = database.getReference("Users").child(userid);
 
                             //buat data model
-                            UserModel userModel = new UserModel(nama,email,0,0,0);
+                            UserModel userModel = new UserModel(nama,email,null,null,null,0,0,0);
 
                             //insert data ke databse
                             reference.setValue(userModel);
@@ -121,5 +121,10 @@ public class RegisterActivity extends AppCompatActivity {
             in_repassword.requestFocus();
             return;
         }
+    }
+
+    public void login(View view) {
+        startActivity(new Intent(this,LoginActivity.class));
+        finish();
     }
 }

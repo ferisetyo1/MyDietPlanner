@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,33 +22,39 @@ import feri.com.mydietplanner.R;
 
 public class HomeFragment extends Fragment {
     View v;
-    FirebaseAuth mAuth;
-    FirebaseUser mUser;
-    FirebaseDatabase database;
-    DatabaseReference userRef;
+
+    Button cekbmi, foodlist;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v= (View) inflater.inflate(R.layout.fragment_home,container,false);
+        v = (View) inflater.inflate(R.layout.fragment_home, container, false);
 
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
-        database = FirebaseDatabase.getInstance();
+        cekbmi=v.findViewById(R.id.cekbmi);
+        foodlist=v.findViewById(R.id.foodlist);
+        cekbmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cektipsandbmi();
+            }
+        });
+
+        foodlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FoodList();
+            }
+        });
 
         return v;
     }
 
-    public void cektipsandbmi(View view) {
+    public void cektipsandbmi() {
         startActivity(new Intent(getContext(), CekBMIandTipsActivity.class));
     }
 
-    public void FoodList(View view) {
+    public void FoodList() {
         startActivity(new Intent(getContext(), FoodActivity.class));
     }
 
-    public void logout(View view) {
-        mAuth.signOut();
-        startActivity(new Intent(getContext(), LoginActivity.class));
-
-    }
 }

@@ -8,17 +8,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import feri.com.mydietplanner.Fragment.AccountFragment;
+import feri.com.mydietplanner.Fragment.ProfilFragment;
 import feri.com.mydietplanner.Fragment.HomeFragment;
 import feri.com.mydietplanner.R;
 
@@ -26,8 +21,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-    FirebaseDatabase database;
-    DatabaseReference userRef;
     private BottomNavigationView bottomNavigation;
 
     @Override
@@ -37,18 +30,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        database = FirebaseDatabase.getInstance();
-        bottomNavigation=findViewById(R.id.navigation);
+        bottomNavigation=findViewById(R.id.bottom_navbar);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
         if (savedInstanceState == null) {
-            bottomNavigation.setSelectedItemId(R.id.navigation_home);
+            bottomNavigation.setSelectedItemId(R.id.menu_home);
         }
 
 
         if (mUser != null) {
-            userRef = database.getReference("Users").child(mUser.getUid());
-            Log.d("uid=", mUser.getUid());
-            //loadData();
         } else {
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
@@ -79,12 +68,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment = null;
 
         switch (menuItem.getItemId()) {
-            case R.id.navigation_home:
+            case R.id.menu_home:
                 fragment = new HomeFragment();
                 break;
 
-            case R.id.navigation_account:
-                fragment = new AccountFragment();
+            case R.id.menu_profil:
+                fragment = new ProfilFragment();
                 break;
         }
 
@@ -95,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fl_container, fragment)
                     .commit();
             return true;
         }
