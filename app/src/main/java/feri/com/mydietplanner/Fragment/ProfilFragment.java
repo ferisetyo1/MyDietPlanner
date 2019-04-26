@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +28,7 @@ public class ProfilFragment extends Fragment {
     View v;
 
     TextView txt_nama, txt_email, txt_umur, txt_berat, txt_tinggi;
+    Button btn_logout;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     FirebaseDatabase database;
@@ -41,11 +43,17 @@ public class ProfilFragment extends Fragment {
         txt_umur = (TextView) v.findViewById(R.id.txt_umur);
         txt_berat = (TextView) v.findViewById(R.id.txt_berat);
         txt_tinggi = (TextView) v.findViewById(R.id.txt_tinggi);
-
+        btn_logout=v.findViewById(R.id.btnLogout);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         database = FirebaseDatabase.getInstance();
 
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
         userRef = database.getReference("Users").child(mUser.getUid());
         loadData();
         return v;
@@ -69,7 +77,7 @@ public class ProfilFragment extends Fragment {
             }
         });
     }
-    public void logout(View view) {
+    public void logout() {
         mAuth.signOut();
         startActivity(new Intent(getActivity(), LoginActivity.class));
         getActivity().finish();

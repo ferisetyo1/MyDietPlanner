@@ -290,8 +290,7 @@
                     android:background="@drawable/background_btn_logout"
                     android:text="Logout"
                     android:textColor="@color/grey_700"
-                    android:textAlignment="textStart"
-                    android:onClick="logout"/>
+                    android:textAlignment="textStart"/>
                 <!--android:drawableLeft="@drawable/logout"-->
 
             </RelativeLayout>
