@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigation=findViewById(R.id.bottom_navbar);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
         if (savedInstanceState == null) {
-            bottomNavigation.setSelectedItemId(R.id.menu_home);
+            bottomNavigation.setSelectedItemId(R.id.navigation_home);
         }
 
 
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment = null;
 
         switch (menuItem.getItemId()) {
-            case R.id.menu_home:
+            case R.id.navigation_home:
                 fragment = new HomeFragment();
                 break;
 
-            case R.id.menu_profil:
+            case R.id.navigation_profil:
                 fragment = new ProfilFragment();
                 break;
         }

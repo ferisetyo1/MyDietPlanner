@@ -33,11 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/account_outline"
             android:drawablePadding="10dp"
             android:hint="Nama"
             android:textColorHint="@android:color/black"
             android:gravity="center_vertical"/>
-        <!--android:drawableLeft="@drawable/account_outline"-->
 
         <EditText
             android:id="@+id/in_email"
@@ -45,12 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="10dp"
             android:hint="Email"
             android:textColorHint="@android:color/black"
             android:inputType="textEmailAddress"
             android:gravity="center_vertical"/>
-        <!--android:drawableLeft="@drawable/email"-->
 
         <EditText
             android:id="@+id/in_password"
@@ -58,12 +58,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/password"
             android:drawablePadding="10dp"
             android:hint="Password"
             android:textColorHint="@android:color/black"
             android:inputType="textPassword"
             android:gravity="center_vertical"/>
-        <!--android:drawableLeft="@drawable/password"-->
 
         <EditText
             android:id="@+id/in_repassword"
@@ -71,11 +71,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/password"
             android:drawablePadding="10dp"
             android:hint="Re-enter Password"
             android:textColorHint="@android:color/black"
             android:inputType="textPassword" />
-        <!--android:drawableLeft="@drawable/password"-->
 
         <Button
             android:id="@+id/btn_register"
@@ -119,26 +119,27 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/facebook"
             android:drawablePadding="40dp"
             android:paddingLeft="10dp"
             android:background="@color/facebook"
             android:text="Sign in with Facebook"
             android:textAlignment="textStart"
             android:textColor="@color/white"/>
-        <!--android:drawableLeft="@drawable/facebook"-->
 
         <Button
             android:id="@+id/btnGmail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/gmail"
             android:drawablePadding="40dp"
             android:paddingLeft="10dp"
             android:background="@color/white"
             android:text="Sign in with Gmail"
             android:textAlignment="textStart"
             android:textColor="@color/grey_700"/>
-        <!--android:drawableLeft="@drawable/gmail"-->
+
     </LinearLayout>
 
     <TextView

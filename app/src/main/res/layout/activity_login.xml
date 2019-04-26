@@ -20,9 +20,9 @@
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginTop="30dp"
+            android:src="@drawable/logo"
             android:background="@drawable/background_edit_text"
             android:adjustViewBounds="true"/>
-        <!--android:src="@drawable/logo"-->
 
         <TextView
             android:id="@+id/title_login"
@@ -37,12 +37,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="10dp"
             android:hint="Email"
             android:textColorHint="@android:color/black"
             android:inputType="textEmailAddress"
             android:gravity="center_vertical"/>
-        <!--android:drawableLeft="@drawable/email"-->
 
         <EditText
             android:id="@+id/in_password"
@@ -50,12 +50,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/background_edit_text"
+            android:drawableLeft="@drawable/password"
             android:drawablePadding="10dp"
             android:hint="Password"
             android:textColorHint="@android:color/black"
             android:inputType="textPassword"
             android:gravity="center_vertical"/>
-        <!--android:drawableLeft="@drawable/password"-->
 
         <Button
             android:id="@+id/btn_login"
@@ -109,12 +109,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:drawablePadding="40dp"
+            android:drawableLeft="@drawable/facebook"
             android:paddingLeft="10dp"
             android:background="@color/facebook"
             android:text="Sign in with Facebook"
             android:textAlignment="textStart"
             android:textColor="@color/white"/>
-        <!--android:drawableLeft="@drawable/facebook"-->
 
         <Button
             android:id="@+id/btnGmail"
@@ -122,12 +122,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:drawablePadding="40dp"
+            android:drawableLeft="@drawable/gmail"
             android:paddingLeft="10dp"
             android:background="@color/white"
             android:text="Sign in with Gmail"
             android:textAlignment="textStart"
             android:textColor="@color/grey_700"/>
-        <!--android:drawableLeft="@drawable/gmail"-->
 
     </LinearLayout>
 

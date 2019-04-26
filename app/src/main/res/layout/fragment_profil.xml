@@ -36,8 +36,9 @@
                     android:layout_centerHorizontal="true"
                     app:civ_border_width="2dp"
                     app:civ_border_color="@color/black"
+                    android:src="@drawable/avatar"
                     android:elevation="1dp"/>
-                <!--android:src="@drawable/avatar"-->
+
 
                 <LinearLayout
                     android:id="@+id/top"
@@ -65,9 +66,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/background_btn_logout"
+                                android:drawableLeft="@drawable/edit"
                                 android:text="@string/btn_edit"
                                 android:layout_alignParentRight="true"/>
-                            <!--android:drawableLeft="@drawable/edit"-->
 
                         </RelativeLayout>
 
@@ -75,7 +76,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-
 
                             <TextView
                                 android:id="@+id/txt_nama"
@@ -93,9 +93,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
+                                android:drawableLeft="@drawable/lokasi"
                                 android:text="@string/lokasi"
                                 android:textSize="20sp"/>
-                            <!--android:drawableLeft="@drawable/lokasi"-->
 
                             <TextView
                                 android:id="@+id/txt_bio"
@@ -200,8 +200,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
+                            android:background="@drawable/email2"
                             android:layout_gravity="center_vertical"/>
-                        <!--android:background="@drawable/email2"-->
 
                         <TextView
                             android:id="@+id/title_email"
@@ -244,8 +244,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
+                            android:background="@drawable/phone"
                             android:layout_gravity="center_vertical"/>
-                        <!--android:background="@drawable/phone"-->
 
                         <TextView
                             android:id="@+id/title_notelp"
@@ -285,21 +285,18 @@
                     android:layout_marginTop="20dp"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/top"
+                    android:drawableLeft="@drawable/logout"
                     android:paddingLeft="20dp"
                     android:drawablePadding="35dp"
                     android:background="@drawable/background_btn_logout"
                     android:text="Logout"
                     android:textColor="@color/grey_700"
                     android:textAlignment="textStart"/>
-                <!--android:drawableLeft="@drawable/logout"-->
 
             </RelativeLayout>
 
         </LinearLayout>
 
-
-
-        <!--</LinearLayout>-->
-
     </RelativeLayout>
+
 </ScrollView>
