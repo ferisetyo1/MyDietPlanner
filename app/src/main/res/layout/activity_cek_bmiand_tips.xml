@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.CekBMIandTipsActivity">
+    tools:context=".Activity.CekBMIandTipsActivity"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/bmi_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI-mu 99"/>
+    <TextView
+        android:id="@+id/kategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kateori"/>
+    <TextView
+        android:id="@+id/resiko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="resiko"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show tips"
+        android:id="@+id/btn_showtips"/>
+
+</LinearLayout>
