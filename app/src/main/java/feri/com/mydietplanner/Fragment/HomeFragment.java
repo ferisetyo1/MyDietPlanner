@@ -10,14 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import feri.com.mydietplanner.Activity.CekBMIandTipsActivity;
-import feri.com.mydietplanner.Activity.FoodActivity;
-import feri.com.mydietplanner.Activity.LoginActivity;
 import feri.com.mydietplanner.R;
 
 public class HomeFragment extends Fragment {
@@ -31,7 +24,6 @@ public class HomeFragment extends Fragment {
         v = (View) inflater.inflate(R.layout.fragment_home, container, false);
 
         cekbmi=v.findViewById(R.id.cekbmi);
-        foodlist=v.findViewById(R.id.foodlist);
         cekbmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,22 +31,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        foodlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FoodList();
-            }
-        });
 
         return v;
     }
 
     public void cektipsandbmi() {
         startActivity(new Intent(getContext(), CekBMIandTipsActivity.class));
-    }
-
-    public void FoodList() {
-        startActivity(new Intent(getContext(), FoodActivity.class));
     }
 
 }

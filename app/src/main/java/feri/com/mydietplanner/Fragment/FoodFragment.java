@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import feri.com.mydietplanner.Adapter.FoodAdapter;
-import feri.com.mydietplanner.Adapter.HorizontalFoodAdapter;
 import feri.com.mydietplanner.Adapter.VerticalFoodAdapter;
-import feri.com.mydietplanner.Model.FoodModel;
 import feri.com.mydietplanner.Model.HorizontalFoodModel;
 import feri.com.mydietplanner.Model.VerticalFoodModel;
 import feri.com.mydietplanner.R;
