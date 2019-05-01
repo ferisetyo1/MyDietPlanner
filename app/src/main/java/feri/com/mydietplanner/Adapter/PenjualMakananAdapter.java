@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import feri.com.mydietplanner.Activity.MapActivity;
+import feri.com.mydietplanner.Activity.MapsMakananActivity;
 import feri.com.mydietplanner.Model.PenjualMakananModel;
 import feri.com.mydietplanner.R;
 
@@ -38,7 +38,7 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, final int i) {
-        String nama = penjualMakananModels.get(i).getNama();
+        final String nama = penjualMakananModels.get(i).getNama();
         final int lat=penjualMakananModels.get(i).getLat();
         final int long_=penjualMakananModels.get(i).getLong();
         String harga = String.valueOf(penjualMakananModels.get(i).getHarga());
@@ -48,9 +48,10 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
         customViewHolder.lihat_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, MapActivity.class);
+                Intent intent=new Intent(context, MapsMakananActivity.class);
                 intent.putExtra("lat",lat);
                 intent.putExtra("long",long_);
+                intent.putExtra("nama",nama);
                 context.startActivity(intent);
             }
         });
