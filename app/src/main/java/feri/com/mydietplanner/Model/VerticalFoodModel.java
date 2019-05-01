@@ -6,6 +6,14 @@ public class VerticalFoodModel {
     String title;
     ArrayList <HorizontalFoodModel> listFood;
 
+    public VerticalFoodModel() {
+    }
+
+    public VerticalFoodModel(String title, ArrayList<HorizontalFoodModel> listFood) {
+        this.title = title;
+        this.listFood = listFood;
+    }
+
     public String getTitle() {
         return title;
     }

@@ -33,9 +33,7 @@ public class FoodFragment extends Fragment {
     DatabaseReference foodRef;
     RecyclerView verticalRecycler;
     VerticalFoodAdapter vFoodAdapter;
-    HorizontalFoodAdapter hFoodAdapter;
     private ArrayList<VerticalFoodModel> vFoodModels = new ArrayList<VerticalFoodModel>();
-    private ArrayList<HorizontalFoodModel> hFoodModels = new ArrayList<HorizontalFoodModel>();
 
     @Nullable
     @Override
@@ -44,15 +42,12 @@ public class FoodFragment extends Fragment {
 
         database = FirebaseDatabase.getInstance();
         foodRef = database.getReference("Foods");
-//        foodAdapter = new FoodAdapter(getContext());
 
         verticalRecycler = v.findViewById(R.id.rv_vertical);
         verticalRecycler.setHasFixedSize(true);
 
         verticalRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        vFoodAdapter = new VerticalFoodAdapter(getContext(), vFoodModels);
-        hFoodAdapter = new HorizontalFoodAdapter(getContext(), hFoodModels);
-        setTitle();
+
         loadData();
 
         return v;
@@ -62,15 +57,52 @@ public class FoodFragment extends Fragment {
         foodRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                hFoodModels.clear();
+                String[] _title = {"Breakfast", "Lunch", "Dinner", "Snack"};
+                ArrayList<HorizontalFoodModel> breakfast = new ArrayList<>();
+                ArrayList<HorizontalFoodModel> lunch = new ArrayList<>();
+                ArrayList<HorizontalFoodModel> dinner = new ArrayList<>();
+                ArrayList<HorizontalFoodModel> snack = new ArrayList<>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    String title = (String) dataSnapshot1.child("kategori").getValue().toString();
                     String key = dataSnapshot1.getKey();
-                    Log.d("key",key);
-                    HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
-                    foodModel.setFoodKey(key);
-                    hFoodModels.add(foodModel);
+                    if (title.equalsIgnoreCase("breakfast") && breakfast.size() <= 10) {
+                        HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
+                        foodModel.setFoodKey(key);
+                        breakfast.add(foodModel);
+                    }
+
+                    if (title.equalsIgnoreCase("lunch") && lunch.size() <= 10) {
+                        HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
+                        foodModel.setFoodKey(key);
+                        lunch.add(foodModel);
+                    }
+
+                    if (title.equalsIgnoreCase("dinner") && dinner.size() <= 10) {
+                        HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
+                        foodModel.setFoodKey(key);
+                        dinner.add(foodModel);
+                    }
+
+                    if (title.equalsIgnoreCase("snack") && snack.size() <= 10) {
+                        HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
+                        foodModel.setFoodKey(key);
+                        snack.add(foodModel);
+                    }
                 }
-                hFoodAdapter.addItem(hFoodModels);
+
+                VerticalFoodModel v_breakfast = new VerticalFoodModel(_title[0],breakfast);
+                VerticalFoodModel v_lunch = new VerticalFoodModel(_title[1],lunch);
+                VerticalFoodModel v_dinner = new VerticalFoodModel(_title[2],dinner);
+                VerticalFoodModel v_snack = new VerticalFoodModel(_title[3],snack);
+
+                vFoodModels.add(v_breakfast);
+                vFoodModels.add(v_lunch);
+                vFoodModels.add(v_dinner);
+                vFoodModels.add(v_snack);
+
+                vFoodAdapter = new VerticalFoodAdapter(getContext(), vFoodModels);
+                vFoodAdapter.notifyDataSetChanged();
+                verticalRecycler.setAdapter(vFoodAdapter);
             }
 
             @Override
@@ -79,22 +111,22 @@ public class FoodFragment extends Fragment {
             }
         });
     }
-    private void setTitle(){
-        String[] title = {"Breakfast", "Lunch", "Dinner", "Snack"};
-
-        for(int i = 0; i < title.length; i++){
-            VerticalFoodModel verticalFoodModel = new VerticalFoodModel();
-            verticalFoodModel.setTitle("Title "+i);
-            ArrayList<HorizontalFoodModel> horizontalFoodModels =  new ArrayList<>();
-
-            for(int j = 0; j < vFoodAdapter.getItemCount(); j++){
-                HorizontalFoodModel horizontalFoodModel = new HorizontalFoodModel();
-                horizontalFoodModels.add(horizontalFoodModel);
-            }
-            verticalFoodModel.setArrayList(horizontalFoodModels);
-            vFoodModels.add(verticalFoodModel);
-        }
-
-        vFoodAdapter.notifyDataSetChanged();
-    }
+//    private void setTitle(){
+//        String[] title = {"Breakfast", "Lunch", "Dinner", "Snack"};
+//
+//        for(int i = 0; i < title.length; i++){
+//            VerticalFoodModel verticalFoodModel = new VerticalFoodModel();
+//            verticalFoodModel.setTitle("Title "+i);
+//            ArrayList<HorizontalFoodModel> horizontalFoodModels =  new ArrayList<>();
+//
+//            for(int j = 0; j < vFoodAdapter.getItemCount(); j++){
+//                HorizontalFoodModel horizontalFoodModel = new HorizontalFoodModel();
+//                horizontalFoodModels.add(horizontalFoodModel);
+//            }
+//            verticalFoodModel.setArrayList(horizontalFoodModels);
+//            vFoodModels.add(verticalFoodModel);
+//        }
+//
+//        vFoodAdapter.notifyDataSetChanged();
+//    }
 }

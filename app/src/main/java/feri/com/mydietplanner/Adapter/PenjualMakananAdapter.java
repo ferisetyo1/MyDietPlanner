@@ -1,6 +1,7 @@
 package feri.com.mydietplanner.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import feri.com.mydietplanner.Activity.MapActivity;
 import feri.com.mydietplanner.Model.PenjualMakananModel;
 import feri.com.mydietplanner.R;
 
@@ -35,14 +37,23 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, int i) {
+    public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, final int i) {
         String nama = penjualMakananModels.get(i).getNama();
-        int lat=penjualMakananModels.get(i).getLat();
-        int long_=penjualMakananModels.get(i).getLong();
+        final int lat=penjualMakananModels.get(i).getLat();
+        final int long_=penjualMakananModels.get(i).getLong();
         String harga = String.valueOf(penjualMakananModels.get(i).getHarga());
 
         customViewHolder.txt_nama.setText(nama);
         customViewHolder.txt_harga.setText(harga);
+        customViewHolder.lihat_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, MapActivity.class);
+                intent.putExtra("lat",lat);
+                intent.putExtra("long",long_);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -45,10 +45,10 @@ public class VerticalFoodAdapter extends RecyclerView.Adapter<VerticalFoodAdapte
     public void onBindViewHolder(@NonNull VerticalViewHolder verticalViewHolder, int i) {
         final VerticalFoodModel verticalFoodModel = list.get(i);
         String title = verticalFoodModel.getTitle();
-        ArrayList<HorizontalFoodModel> singleItem = verticalFoodModel.getArrayList();
+        ArrayList<HorizontalFoodModel> listfood = verticalFoodModel.getArrayList();
 
         verticalViewHolder.txtTitle.setText(title);
-        HorizontalFoodAdapter horizontalFoodAdapter = new HorizontalFoodAdapter(context, singleItem);
+        HorizontalFoodAdapter horizontalFoodAdapter = new HorizontalFoodAdapter(context, listfood);
 
         verticalViewHolder.recyclerView.setHasFixedSize(true);
         verticalViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
@@ -59,6 +59,8 @@ public class VerticalFoodAdapter extends RecyclerView.Adapter<VerticalFoodAdapte
     public int getItemCount() {
         return list.size();
     }
+
+
 
     public class VerticalViewHolder extends RecyclerView.ViewHolder{
         RecyclerView recyclerView;

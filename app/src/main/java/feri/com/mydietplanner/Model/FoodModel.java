@@ -5,17 +5,26 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class FoodModel {
-    private String nama,FoodKey,deskripsi,img_url;
+    private String nama,FoodKey,deskripsi,img_url,kategori;
     private int kalori;
 
     public FoodModel() {
     }
 
-    public FoodModel(String nama, String deskripsi, String img_url, int kalori) {
+    public FoodModel(String nama, String deskripsi, String img_url, String kategori, int kalori) {
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.img_url = img_url;
+        this.kategori = kategori;
         this.kalori = kalori;
+    }
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 
     public String getDeskripsi() {

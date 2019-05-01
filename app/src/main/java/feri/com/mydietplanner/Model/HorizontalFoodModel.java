@@ -1,17 +1,26 @@
 package feri.com.mydietplanner.Model;
 
 public class HorizontalFoodModel {
-    private String nama,FoodKey,deskripsi,img_url;
+    private String nama,FoodKey,deskripsi,img_url,kategori;
     private int kalori;
 
     public HorizontalFoodModel() {
     }
 
-    public HorizontalFoodModel(String nama, String deskripsi, String img_url, int kalori) {
+    public HorizontalFoodModel(String nama, String deskripsi, String img_url, String kategori, int kalori) {
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.img_url = img_url;
+        this.kategori = kategori;
         this.kalori = kalori;
+    }
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 
     public String getDeskripsi() {
