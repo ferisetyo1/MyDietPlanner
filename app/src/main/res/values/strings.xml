@@ -4,6 +4,7 @@
 
     <!--menu navigation bar-->
     <string name="title_home">Home</string>
+    <string name="title_food">Food</string>
     <string name="title_profil">Profil</string>
 
     <!--fragment profil-->

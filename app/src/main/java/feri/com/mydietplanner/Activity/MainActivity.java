@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import feri.com.mydietplanner.Fragment.FoodFragment;
 import feri.com.mydietplanner.Fragment.ProfilFragment;
 import feri.com.mydietplanner.Fragment.HomeFragment;
 import feri.com.mydietplanner.R;
@@ -71,7 +72,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_home:
                 fragment = new HomeFragment();
                 break;
-
+            case R.id.navigation_food:
+                fragment = new FoodFragment();
+                break;
             case R.id.navigation_profil:
                 fragment = new ProfilFragment();
                 break;

@@ -7,6 +7,10 @@
         android:title="@string/title_home" />
 
     <item
+        android:id="@+id/navigation_food"
+        android:icon="@drawable/food"
+        android:title="@string/title_food"/>
+    <item
         android:id="@+id/navigation_profil"
         android:icon="@drawable/account_outline"
         android:title="@string/title_profil" />

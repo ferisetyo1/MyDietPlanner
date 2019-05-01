@@ -1,17 +1,13 @@
 package feri.com.mydietplanner.Model;
 
-import android.util.Log;
-
-import java.util.ArrayList;
-
-public class FoodModel {
+public class HorizontalFoodModel {
     private String nama,FoodKey,deskripsi,img_url;
     private int kalori;
 
-    public FoodModel() {
+    public HorizontalFoodModel() {
     }
 
-    public FoodModel(String nama, String deskripsi, String img_url, int kalori) {
+    public HorizontalFoodModel(String nama, String deskripsi, String img_url, int kalori) {
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.img_url = img_url;

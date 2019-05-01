@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,11 +9,17 @@
     tools:context=".Activity.LoginActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:id="@+id/login_ic"
@@ -29,44 +35,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MyDietPlanner"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            android:fontFamily="@font/courgette_regular"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textColorHint="@android:color/black">
+            android:layout_marginTop="30dp"
+            android:textColorHint="@android:color/black"
+            app:hintEnabled="false">
 
             <EditText
                 android:id="@+id/in_email"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:background="@drawable/background_edit_text"
                 android:drawableLeft="@drawable/email"
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
                 android:hint="Email"
-                android:inputType="textEmailAddress"
-                 />
+                android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:textColorHint="@android:color/black"
+            app:hintEnabled="false"
             app:passwordToggleEnabled="true">
 
             <EditText
                 android:id="@+id/in_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/background_edit_text"
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="10dp"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColorHint="@android:color/black"
                 android:textCursorDrawable="@null" />
         </android.support.design.widget.TextInputLayout>
 
@@ -84,7 +91,7 @@
             android:id="@+id/txt_lupapass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:text="Lupa Password?"
             android:textStyle="bold" />
@@ -100,7 +107,9 @@
                 android:layout_width="125dp"
                 android:layout_height="2dp"
                 android:layout_gravity="center"
-                android:background="@color/black"></View>
+                android:background="@color/black">
+
+            </View>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,7 +130,7 @@
             android:id="@+id/btnFacebook"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="@color/facebook"
             android:drawableLeft="@drawable/facebook"
             android:drawablePadding="40dp"
@@ -133,8 +142,8 @@
         <Button
             android:id="@+id/btnGmail"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
             android:background="@color/white"
             android:drawableLeft="@drawable/gmail"
             android:drawablePadding="40dp"
@@ -151,9 +160,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:clickable="true"
         android:text="Tidak memiliki akun? Register"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
