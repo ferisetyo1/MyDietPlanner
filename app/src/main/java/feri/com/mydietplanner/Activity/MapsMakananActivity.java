@@ -39,7 +39,7 @@ public class MapsMakananActivity extends AppCompatActivity implements OnMapReady
     DatabaseReference foodRef;
     PenjualMakananAdapter PMA;
     Marker marker;
-    int _long,_lat;
+    int _long, _lat;
     String _namapenjual;
 
     @Override
@@ -49,16 +49,16 @@ public class MapsMakananActivity extends AppCompatActivity implements OnMapReady
         Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         fa = new FragmentActivity();
-        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.maps);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
 //        ChildEventListener mChildEventListener;
 //        foodRef = FirebaseDatabase.getInstance().getReference("Foods");
 //        foodRef.push().setValue(marker);
         //PMA = new PenjualMakananAdapter(this);
-        Intent intent=getIntent();
-        _namapenjual=intent.getStringExtra("nama");
-        _lat= (int) intent.getIntExtra("lat",0);
-        _long=(int) intent.getIntExtra("long",0);
+        Intent intent = getIntent();
+        _namapenjual = intent.getStringExtra("nama");
+        _lat = (int) intent.getIntExtra("lat", 0);
+        _long = (int) intent.getIntExtra("long", 0);
     }
 
     @Override
@@ -67,10 +67,10 @@ public class MapsMakananActivity extends AppCompatActivity implements OnMapReady
         nMap = googleMap;
         nMap.setOnMarkerClickListener(this);
         nMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        LatLng loc = new LatLng(_lat,_long);
+        LatLng loc = new LatLng(_lat, _long);
         nMap.addMarker(new MarkerOptions().position(loc).title(_namapenjual));
         nMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
-        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13.0f),5000,null);
+        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 13.0f), 5000, null);
 //        foodRef.addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -129,8 +129,26 @@
         android:layout_below="@+id/btn_cekTips"
         android:orientation="vertical"
         android:background="@color/colorPrimary">
-
         <TextView
+            android:id="@+id/txt_Resiko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tips kwadasdjhhqeiufhqefqe"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/karla_bold"/>
+        <TextView
+            android:id="@+id/txt_Kategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tips kwadasdjhhqeiufhqefqe"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/karla_bold"/>
+        <TextView
+            android:id="@+id/txt_tips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -140,7 +158,7 @@
             android:fontFamily="@font/karla_bold"/>
 
     </LinearLayout>
-    <Button
+    Button
         android:id="@+id/cekbmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
