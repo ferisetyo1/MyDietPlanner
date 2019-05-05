@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:gravity="center_horizontal">
 
         <ImageView
@@ -25,18 +26,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MyDietPlanner"
-            android:textSize="28sp"/>
+            android:textSize="28sp"
+            android:fontFamily="@font/fredokaone_regular"/>
 
         <EditText
             android:id="@+id/in_nama"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/background_edit_text"
             android:drawableLeft="@drawable/account_outline"
             android:drawablePadding="10dp"
             android:hint="Nama"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/grey_700"
             android:gravity="center_vertical"/>
 
         <EditText
@@ -48,7 +50,7 @@
             android:drawableLeft="@drawable/email"
             android:drawablePadding="10dp"
             android:hint="Email"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/grey_700"
             android:inputType="textEmailAddress"
             android:gravity="center_vertical"/>
 
@@ -61,7 +63,7 @@
             android:drawableLeft="@drawable/password"
             android:drawablePadding="10dp"
             android:hint="Password"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/grey_700"
             android:inputType="textPassword"
             android:gravity="center_vertical"/>
 
@@ -74,7 +76,7 @@
             android:drawableLeft="@drawable/password"
             android:drawablePadding="10dp"
             android:hint="Re-enter Password"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/grey_700"
             android:inputType="textPassword" />
 
         <Button
@@ -87,70 +89,17 @@
             android:backgroundTint="#3498db"
             android:text="Register" />
 
-        <LinearLayout
-            android:id="@+id/lytOr"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_register"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:gravity="center_horizontal">
-            <View
-                android:layout_width="125dp"
-                android:layout_height="2dp"
-                android:background="@color/black"
-                android:layout_gravity="center">
-            </View>
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="or"
-                android:layout_gravity="center"/>
-            <View
-                android:layout_width="125dp"
-                android:layout_height="2dp"
-                android:background="@color/black"
-                android:layout_gravity="center">
-            </View>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnFacebook"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/facebook"
-            android:drawablePadding="40dp"
-            android:paddingLeft="10dp"
-            android:background="@color/facebook"
-            android:text="Sign in with Facebook"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:id="@+id/btnGmail"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/gmail"
-            android:drawablePadding="40dp"
-            android:paddingLeft="10dp"
-            android:background="@color/white"
-            android:text="Sign in with Gmail"
-            android:textAlignment="textStart"
-            android:textColor="@color/grey_700"/>
+            android:layout_marginBottom="30dp"
+            android:text="Sudah memiliki akun? Login"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="login"/>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txt_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:text="Sudah memiliki akun? Login"
-        android:textStyle="bold"
-        android:clickable="true"
-        android:onClick="login"/>
 </RelativeLayout>

@@ -31,10 +31,10 @@ import feri.com.mydietplanner.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     View v;
-    TextView txt_hasil,txt_tips,txt_resiko,txt_kategori, txt_member;
+    TextView txt_hasil,txt_tips,txt_resiko,txt_kategori, txt_member, txt_bmi;
     EditText berat,tinggi;
     Button btn_hitungbmi,btn_cekTips;
-    LinearLayout layout_tips;
+    LinearLayout layout_tips, layout_hasil;
     CircleImageView circleImageView;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
@@ -53,10 +53,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         txt_resiko=v.findViewById(R.id.txt_Resiko);
         txt_tips=v.findViewById(R.id.txt_tips);
         txt_member=v.findViewById(R.id.txt_member);
+        txt_bmi = v.findViewById(R.id.txt_bmi);
         circleImageView=v.findViewById(R.id.user_img);
         btn_hitungbmi=v.findViewById(R.id.btn_hitungBMI);
         btn_cekTips=v.findViewById(R.id.btn_cekTips);
         layout_tips = v.findViewById(R.id.lyt_tips);
+        layout_hasil = v.findViewById(R.id.lyt_hasil);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -70,6 +72,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserModel userModel = dataSnapshot.getValue(UserModel.class);
                 txt_member.setText("Hello, "+userModel.getNama()+"!");
+                txt_bmi.setText(String.valueOf(userModel.getBmi()));
                 Glide.with(getContext()).load(userModel.getImg_url()).into(circleImageView);
             }
 
@@ -196,5 +199,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         this.bmi=_berat*10000/(_tinggi*_tinggi);
         txt_hasil.setText(""+this.bmi);
+        layout_hasil.setVisibility(View.VISIBLE);
     }
 }

@@ -15,9 +15,9 @@
         <developer.shivam.crescento.CrescentoContainer
             android:id="@+id/container_home"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:elevation="5dp"
-            attribute:curvature="10dp"
+            attribute:curvature="20dp"
             attribute:curvatureDirection="outward">
 
             <ImageView
@@ -34,23 +34,11 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center_vertical"
-                android:text="Hello, Member!"
+                android:text="Hello, "
                 android:textSize="28sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:fontFamily="@font/breeserif_regular"
                 />
-
-            <TextView
-                android:id="@+id/txt_pengantar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_below="@+id/txt_member"
-                android:text="Sudahkah anda mengecek kesehatan hari ini?"
-                android:textSize="18sp"
-                android:textColor="@color/black"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_img"
@@ -60,112 +48,224 @@
                 android:layout_marginRight="20dp"
                 android:layout_alignParentRight="true"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/black"
+                app:civ_border_color="@color/white"
                 android:src="@drawable/avatar"
                 android:elevation="1dp"/>
+
+            <TextView
+                android:id="@+id/txt_riwayat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txt_member"
+                android:layout_centerInParent="true"
+                android:text="Riwayat BMI Terakhir :"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/cabin_bold"/>
+
+            <TextView
+                android:id="@+id/txt_bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_riwayat"
+                android:layout_centerInParent="true"
+                android:textSize="40sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/cabin_bold"/>
+
+            <TextView
+                android:id="@+id/txt_kategoriBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_bmi"
+                android:layout_centerInParent="true"
+                android:text="Kategori BMI yang anda miliki adalah.."
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/cabin_bold"/>
         </developer.shivam.crescento.CrescentoContainer>
 
-        <EditText
-            android:id="@+id/et_berat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/container_home"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/background_btn_logout"
-            android:inputType="text"
-            android:hint="Berat Badan"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/et_tinggi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/et_berat"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/background_btn_logout"
-            android:inputType="text"
-            android:hint="Tinggi Badan"
-            android:textColorHint="@color/black"/>
-
-        <Button
-            android:id="@+id/btn_hitungBMI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/et_tinggi"
-            android:layout_centerInParent="true"
-            android:text="Hitung BMI"/>
-
-        <TextView
-            android:id="@+id/title_hasil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/btn_hitungBMI"
-            android:text="Hasil : "
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textAllCaps="true"
-            android:fontFamily="@font/cabin_bold"/>
-
-        <TextView
-            android:id="@+id/txt_hasil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/title_hasil"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimary"/>
-
-        <Button
-            android:id="@+id/btn_cekTips"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/txt_hasil"
-            android:drawableRight="@drawable/down"
-            android:text="Cek Tips"/>
-
         <LinearLayout
-            android:id="@+id/lyt_tips"
+            android:id="@+id/lyt_hitung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_below="@+id/btn_cekTips"
+            android:layout_below="@id/container_home"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Update Cek BMI"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:fontFamily="@font/cabin_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Berat"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/cabin_medium"/>
+
+                    <EditText
+                        android:id="@+id/et_berat"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/container_home"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:background="@drawable/background_edit_berat"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textColorHint="@color/white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tinggi"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/cabin_medium"/>
+
+                    <EditText
+                        android:id="@+id/et_tinggi"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/et_berat"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:background="@drawable/background_edit_tinggi"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:textColorHint="@color/white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_hitungBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/et_tinggi"
+                android:layout_centerInParent="true"
+                android:padding="15dp"
+                android:background="@drawable/background_btn_login"
+                android:text="Hitung BMI"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_hasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/lyt_hitung"
             android:orientation="vertical"
-            android:background="@color/colorPrimary"
             android:visibility="invisible">
+
             <TextView
-                android:id="@+id/txt_Resiko"
+                android:id="@+id/title_hasil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Tips kwadasdjhhqeiufhqefqe"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/karla_bold"/>
+                android:layout_marginLeft="10dp"
+                android:text="Hasil : "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:fontFamily="@font/cabin_bold"/>
+
             <TextView
-                android:id="@+id/txt_Kategori"
+                android:id="@+id/txt_hasil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Tips kwadasdjhhqeiufhqefqe"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/karla_bold"/>
-            <TextView
-                android:id="@+id/txt_tips"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/title_hasil"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/cabin_medium"/>
+
+            <Button
+                android:id="@+id/btn_cekTips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Tips kwadasdjhhqeiufhqefqe"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/karla_bold"/>
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/txt_hasil"
+                android:drawableRight="@drawable/down"
+                android:text="Cek Tips"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/btn_cekTips"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                android:visibility="invisible">
+                <TextView
+                    android:id="@+id/txt_Resiko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Tips kwadasdjhhqeiufhqefqe"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/karla_bold"/>
+                <TextView
+                    android:id="@+id/txt_Kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Tips kwadasdjhhqeiufhqefqe"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/karla_bold"/>
+                <TextView
+                    android:id="@+id/txt_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Tips kwadasdjhhqeiufhqefqe"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/karla_bold"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
