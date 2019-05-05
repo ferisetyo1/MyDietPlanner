@@ -1,5 +1,6 @@
 package feri.com.mydietplanner.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,8 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -22,8 +25,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import feri.com.mydietplanner.Adapter.HorizontalFoodAdapter;
 import feri.com.mydietplanner.Adapter.PenjualMakananAdapter;
 import feri.com.mydietplanner.Model.FoodModel;
+import feri.com.mydietplanner.Model.HorizontalFoodModel;
 import feri.com.mydietplanner.Model.PenjualMakananModel;
 import feri.com.mydietplanner.R;
 
@@ -31,14 +36,15 @@ public class detail_foodFragment extends Fragment {
 
     View v;
     FirebaseDatabase database;
-    DatabaseReference foodRef;
+    DatabaseReference foodRef,wishRef;
     String foodkey;
 
     private TextView nama, kalori,deskripsi, karbohidrat, protein, lemak;
-    private ImageView food_img, back_img, favorite_img;
+    private ImageView food_img;
     private RecyclerView rv_penjual;
     private PenjualMakananAdapter penjualMakananAdapter;
     private TextView kategori;
+    private ImageButton back_img,favorite_img;
 
     @Nullable
     @Override
@@ -64,6 +70,23 @@ public class detail_foodFragment extends Fragment {
             foodkey=bundle.getString("foodkey");
             Log.d("foodkey",foodkey);
         }
+        wishRef = FirebaseDatabase.getInstance().getReference("wishlist");
+        final String nama = bundle.getString("Nama");
+        final String deskripsi = bundle.getString("Desk");
+        final String img_url = bundle.getString("Img");
+        final String kategori = bundle.getString("Kategori");
+        final int kalori = bundle.getInt("Kalori");
+        favorite_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(favorite_img.isClickable()==true){
+                    String id = wishRef.push().getKey();
+                    HorizontalFoodModel fm = new HorizontalFoodModel(nama, deskripsi, img_url, kategori,kalori);
+                    wishRef.child(id).setValue(fm);
+                    Toast.makeText(getActivity(), "Ditambahkan ke wishlist",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         loadData();
         return v;
     }
@@ -88,6 +111,7 @@ public class detail_foodFragment extends Fragment {
                     PenjualMakananModel penjualMakananModel=dataSnapshot1.getValue(PenjualMakananModel.class);
                     //Log.d("nama",penjualMakananModel.getNama());
                     penjualMakananModels.add(penjualMakananModel);
+                    Log.d("longlat3",(double)dataSnapshot1.child("lat").getValue()+" "+(double)penjualMakananModel.getLong());
                 }
                 penjualMakananAdapter.addItem(penjualMakananModels);
                 rv_penjual.setAdapter(penjualMakananAdapter);

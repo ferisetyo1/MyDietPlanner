@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="feri.com.mydietplanner">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -19,6 +19,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAlF4iIz-nnjxtQ3H2W29ISWK36V9c3zg8"
             />
+        <activity android:name=".Activity.WishlistActivity"/>
         <activity android:name=".Activity.CekBMIandTipsActivity" />
         <activity android:name=".Activity.ResetPasswordActivity" />
         <activity android:name=".Activity.RegisterActivity" />
