@@ -165,6 +165,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             return;
         }
 
+        userRef.child("berat").setValue(txt_berat);
+        userRef.child("tinggi").setValue(txt_tinggi);
+
         double _berat=Double.parseDouble(txt_berat);
         double _tinggi=Double.parseDouble(txt_tinggi);
 

@@ -68,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                             //insert data ke databse
                             reference.setValue(userModel);
 
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), DataProfilActivity.class));
                             finish();
                         }
                     }

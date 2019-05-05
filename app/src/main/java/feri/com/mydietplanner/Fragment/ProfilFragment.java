@@ -38,7 +38,7 @@ public class ProfilFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v= (View) inflater.inflate(R.layout.fragment_profil,container,false);
-        txt_nama = (TextView) v.findViewById(R.id.txt_nama);
+        txt_nama = (TextView) v.findViewById(R.id.txt_alamat);
         txt_email = (TextView) v.findViewById(R.id.txt_email);
         txt_umur = (TextView) v.findViewById(R.id.txt_umur);
         txt_berat = (TextView) v.findViewById(R.id.txt_berat);

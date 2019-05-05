@@ -56,7 +56,7 @@ public class MapsMakananActivity extends AppCompatActivity implements OnMapReady
 //        foodRef.push().setValue(marker);
         //PMA = new PenjualMakananAdapter(this);
         Intent intent = getIntent();
-        _namapenjual = intent.getStringExtra("nama");
+        _namapenjual = intent.getStringExtra("alamat");
         _lat = (int) intent.getIntExtra("lat", 0);
         _long = (int) intent.getIntExtra("long", 0);
     }
