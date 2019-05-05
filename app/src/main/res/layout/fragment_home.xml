@@ -53,6 +53,7 @@
                 android:textColor="@color/black"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_img"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -129,13 +130,15 @@
             android:text="Cek Tips"/>
 
         <LinearLayout
+            android:id="@+id/lyt_tips"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_below="@+id/btn_cekTips"
             android:orientation="vertical"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorPrimary"
+            android:visibility="invisible">
             <TextView
                 android:id="@+id/txt_Resiko"
                 android:layout_width="wrap_content"

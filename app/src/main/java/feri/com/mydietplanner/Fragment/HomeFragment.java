@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,14 +25,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import feri.com.mydietplanner.Model.UserModel;
 import feri.com.mydietplanner.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     View v;
-    TextView txt_hasil,txt_tips,txt_resiko,txt_kategori;
+    TextView txt_hasil,txt_tips,txt_resiko,txt_kategori, txt_member;
     EditText berat,tinggi;
     Button btn_hitungbmi,btn_cekTips;
+    LinearLayout layout_tips;
+    CircleImageView circleImageView;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     FirebaseDatabase firebaseDatabase;
@@ -47,8 +52,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         txt_kategori=v.findViewById(R.id.txt_Kategori);
         txt_resiko=v.findViewById(R.id.txt_Resiko);
         txt_tips=v.findViewById(R.id.txt_tips);
+        txt_member=v.findViewById(R.id.txt_member);
+        circleImageView=v.findViewById(R.id.user_img);
         btn_hitungbmi=v.findViewById(R.id.btn_hitungBMI);
         btn_cekTips=v.findViewById(R.id.btn_cekTips);
+        layout_tips = v.findViewById(R.id.lyt_tips);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -56,6 +64,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         tipsRef = firebaseDatabase.getReference("Tips");
         btn_hitungbmi.setOnClickListener(this);
         btn_cekTips.setOnClickListener(this);
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                UserModel userModel = dataSnapshot.getValue(UserModel.class);
+                txt_member.setText("Hello, "+userModel.getNama()+"!");
+                Glide.with(getContext()).load(userModel.getImg_url()).into(circleImageView);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         return v;
     }
 
@@ -142,6 +164,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         Log.d("error","error ambil data kategori");
                     }
                 });
+                layout_tips.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -165,8 +188,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             return;
         }
 
-        userRef.child("berat").setValue(txt_berat);
-        userRef.child("tinggi").setValue(txt_tinggi);
+        userRef.child("berat").setValue(Integer.parseInt(txt_berat));
+        userRef.child("tinggi").setValue(Integer.parseInt(txt_tinggi));
 
         double _berat=Double.parseDouble(txt_berat);
         double _tinggi=Double.parseDouble(txt_tinggi);

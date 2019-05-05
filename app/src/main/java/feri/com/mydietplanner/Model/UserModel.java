@@ -1,21 +1,30 @@
 package feri.com.mydietplanner.Model;
 
 public class UserModel {
-    private String nama,email,bio,lokasi,telp;
+    private String nama,email,bio,lokasi,telp,img_url;
     private int berat, tinggi, umur;
 
     public UserModel() {
     }
 
-    public UserModel(String nama, String email, String bio, String lokasi, String telp, int berat, int tinggi, int umur) {
+    public UserModel(String nama, String email, String bio, String lokasi, String telp, String img_url, int berat, int tinggi, int umur) {
         this.nama = nama;
         this.email = email;
         this.bio = bio;
         this.lokasi = lokasi;
         this.telp = telp;
+        this.img_url = img_url;
         this.berat = berat;
         this.tinggi = tinggi;
         this.umur = umur;
+    }
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
     }
 
     public String getBio() {
