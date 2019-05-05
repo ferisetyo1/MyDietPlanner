@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +40,10 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, final int i) {
         final String nama = penjualMakananModels.get(i).getNama();
-        final int lat=penjualMakananModels.get(i).getLat();
-        final int long_=penjualMakananModels.get(i).getLong();
+        final double lat=penjualMakananModels.get(i).getLat();
+        final double long_=penjualMakananModels.get(i).getLong();
         String harga = String.valueOf(penjualMakananModels.get(i).getHarga());
+        Log.d("longlat2",lat+" "+long_);
 
         customViewHolder.txt_nama.setText(nama);
         customViewHolder.txt_harga.setText(harga);
