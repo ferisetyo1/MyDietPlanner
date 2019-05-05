@@ -25,6 +25,7 @@
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.MainActivity"/>
         <activity android:name=".Activity.MapsMakananActivity"/>
+        <activity android:name=".Activity.DataProfilActivity"/>
         <activity android:name=".Activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -30,25 +30,25 @@
         app:civ_circle_background_color="@color/white"/>
 
     <TextView
-        android:id="@+id/title_nama"
+        android:id="@+id/title_alamat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="55dp"
         android:layout_below="@id/img_avatar"
-        android:text="Nama :"
+        android:text="Alamat :"
         android:textSize="20sp"
         android:textColor="@color/black"/>
 
     <EditText
-        android:id="@+id/txt_nama"
+        android:id="@+id/txt_alamat"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/title_nama"
+        android:layout_below="@id/title_alamat"
         android:background="@drawable/background_edit_text"
-        android:hint="Nama anda..."/>
+        android:hint="Alamat anda..."/>
 
     <TextView
         android:id="@+id/title_umur"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="55dp"
-        android:layout_below="@id/txt_nama"
+        android:layout_below="@id/txt_alamat"
         android:text="Umur :"
         android:textSize="20sp"
         android:textColor="@color/black"/>

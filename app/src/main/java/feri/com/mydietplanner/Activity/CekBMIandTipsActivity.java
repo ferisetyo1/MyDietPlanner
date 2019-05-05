@@ -91,7 +91,7 @@ public class CekBMIandTipsActivity extends AppCompatActivity {
                 kategoriref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String kategori = dataSnapshot.child("nama").getValue().toString();
+                        String kategori = dataSnapshot.child("alamat").getValue().toString();
                         String resiko = dataSnapshot.child("resiko").getValue().toString();
                         txt_kategori.setText(kategori);
                         txt_resiko.setText(resiko);
