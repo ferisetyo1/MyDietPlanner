@@ -74,9 +74,9 @@ public class PenjualMakananAdapter extends RecyclerView.Adapter<PenjualMakananAd
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            lihat_map=(Button) itemView.findViewById(R.id.btn_lihat_map);
-            txt_nama=(TextView)itemView.findViewById(R.id.nama_penjual);
-            txt_harga=(TextView)itemView.findViewById(R.id.harga);
+            lihat_map = (Button) itemView.findViewById(R.id.btn_lihat_map);
+            txt_nama = (TextView)itemView.findViewById(R.id.nama_penjual);
+            txt_harga = (TextView)itemView.findViewById(R.id.harga);
         }
     }
 }
