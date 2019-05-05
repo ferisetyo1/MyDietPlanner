@@ -2,13 +2,13 @@ package feri.com.mydietplanner.Model;
 
 public class PenjualMakananModel {
     private String nama;
-    private int Lat,Long;
+    private double Lat,Long;
     private long harga;
 
     public PenjualMakananModel() {
     }
 
-    public PenjualMakananModel(String nama, int lat, int aLong, long harga) {
+    public PenjualMakananModel(String nama, double lat, double aLong, long harga) {
         this.nama = nama;
         Lat = lat;
         Long = aLong;
@@ -31,19 +31,19 @@ public class PenjualMakananModel {
         this.nama = nama;
     }
 
-    public int getLat() {
+    public double getLat() {
         return Lat;
     }
 
-    public void setLat(int lat) {
+    public void setLat(double lat) {
         Lat = lat;
     }
 
-    public int getLong() {
+    public double getLong() {
         return Long;
     }
 
-    public void setLong(int aLong) {
+    public void setLong(double aLong) {
         Long = aLong;
     }
 }
