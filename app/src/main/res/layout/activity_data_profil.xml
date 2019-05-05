@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_gradient">
+
+    <TextView
+        android:id="@+id/title_lengkapi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Lengkapi Data Anda"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textSize="20sp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/title_lengkapi"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/black"
+        app:civ_circle_background_color="@color/white"/>
+
+    <TextView
+        android:id="@+id/title_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="55dp"
+        android:layout_below="@id/img_avatar"
+        android:text="Nama :"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/txt_nama"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title_nama"
+        android:background="@drawable/background_edit_text"
+        android:hint="Nama anda..."/>
+
+    <TextView
+        android:id="@+id/title_umur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="55dp"
+        android:layout_below="@id/txt_nama"
+        android:text="Umur :"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/txt_umur"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title_umur"
+        android:background="@drawable/background_edit_text"
+        android:hint="Umur anda..."/>
+
+    <TextView
+        android:id="@+id/title_telp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="55dp"
+        android:layout_below="@id/txt_umur"
+        android:text="Nomor Telepon :"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/txt_telp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title_telp"
+        android:background="@drawable/background_edit_text"
+        android:hint="Nomor anda..."/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txt_telp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_btn_logout"
+        android:text="Submit"/>
+</RelativeLayout>
