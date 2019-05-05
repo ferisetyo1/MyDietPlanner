@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:attribute="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <developer.shivam.crescento.CrescentoContainer
+        android:id="@+id/container_home"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:elevation="5dp"
+        attribute:curvature="10dp"
+        attribute:curvatureDirection="outward">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_gradient"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/txt_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Hello, Member!"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/breeserif_regular"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/black"
+            android:src="@drawable/avatar"
+            android:elevation="1dp"/>
+    </developer.shivam.crescento.CrescentoContainer>
 
     <Button
         android:id="@+id/cekbmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/container_home"
         android:text="CEK TIPS DIET dan BMI" />
 
     <Button

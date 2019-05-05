@@ -1,46 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="#F7F8F8">
 
-    <ImageView
-        android:id="@+id/food_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:scaleType="fitXY" />
-    <TextView
-        android:id="@+id/nama_makanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama_makanan"
-        />
-    <TextView
-        android:id="@+id/kalori_makanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="kalori_makanan"
-        />
-    <TextView
-        android:id="@+id/kategori_makanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="kategori_makanan"
-        />
-    <TextView
-        android:id="@+id/deskripsi_makanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama_makanan"
-        />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_penjualmakanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:listitem="@layout/penjual_makanan">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
 
-    </android.support.v7.widget.RecyclerView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/food_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/avatar"/>
+
+            <TextView
+                android:id="@+id/txt_kandungan_gizi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/food_image"
+                android:text="Kandungan Gizi :"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/karla_bold"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_kandungan_gizi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_kandungan_gizi"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/lyt_kalori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/circular_shape">
+
+                        <TextView
+                            android:id="@+id/txt_kalori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="256 mg"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/karla_bold"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title_kalori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Kalori"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/karla_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/lyt_karbohidrat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/circular_shape">
+
+                        <TextView
+                            android:id="@+id/txt_karbohidrat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="128 mg"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/karla_bold"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title_karbohidrat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Karbohidrat"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/karla_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/lyt_protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circular_shape">
+
+                        <TextView
+                            android:id="@+id/txt_protein"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10.2 mg"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/karla_bold"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title_protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Protein"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/karla_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/lyt_lemak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circular_shape">
+
+                        <TextView
+                            android:id="@+id/txt_lemak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="7.9 mg"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/karla_bold"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title_lemak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Lemak"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/karla_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_deskripsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_kandungan_gizi"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/karla_bold"/>
+
+                <TextView
+                    android:id="@+id/deskripsi_makanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Deskripsi Makanan"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_kategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_below="@+id/lyt_deskripsi"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori :"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/karla_bold"/>
+
+                <TextView
+                    android:id="@+id/kategori_makanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kategori_makanan"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_toko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_kategori"
+                android:padding="5dp"
+                android:text="Toko yang menjual :"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/karla_bold"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_penjualmakanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_toko"
+                android:paddingLeft="5dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/penjual_makanan">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/black" />
+
+        <TextView
+            android:id="@+id/txt_nama_makanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="Nama Makanan"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textAllCaps="true"
+            android:fontFamily="@font/cabin_medium" />
+
+        <ImageView
+            android:id="@+id/btn_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/heart_kosong"
+            android:backgroundTint="@color/black"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

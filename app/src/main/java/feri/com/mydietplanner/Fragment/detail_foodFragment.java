@@ -34,8 +34,8 @@ public class detail_foodFragment extends Fragment {
     DatabaseReference foodRef;
     String foodkey;
 
-    private TextView nama, kalori,deskripsi;
-    private ImageView food_img;
+    private TextView nama, kalori,deskripsi, karbohidrat, protein, lemak;
+    private ImageView food_img, back_img, favorite_img;
     private RecyclerView rv_penjual;
     private PenjualMakananAdapter penjualMakananAdapter;
     private TextView kategori;
@@ -43,15 +43,20 @@ public class detail_foodFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = (View) inflater.inflate(R.layout.fragment_detailfood, container, false);
-        nama = (TextView) v.findViewById(R.id.nama_makanan);
-        kalori = (TextView) v.findViewById(R.id.kalori_makanan);
-        kategori = (TextView) v.findViewById(R.id.kategori_makanan);
-        deskripsi=(TextView)v.findViewById(R.id.deskripsi_makanan);
-        food_img=(ImageView)v.findViewById(R.id.food_image);
-        rv_penjual=(RecyclerView)v.findViewById(R.id.rv_penjualmakanan);
-        rv_penjual.setLayoutManager(new LinearLayoutManager(getContext()));
-        penjualMakananAdapter=new PenjualMakananAdapter(getContext());
+        v = inflater.inflate(R.layout.fragment_detailfood, container, false);
+        nama =  v.findViewById(R.id.txt_nama_makanan);
+        kalori =  v.findViewById(R.id.txt_kalori);
+        karbohidrat = v.findViewById(R.id.txt_karbohidrat);
+        protein = v.findViewById(R.id.txt_protein);
+        lemak = v.findViewById(R.id.txt_lemak);
+        kategori =  v.findViewById(R.id.kategori_makanan);
+        deskripsi = v.findViewById(R.id.deskripsi_makanan);
+        food_img = v.findViewById(R.id.food_image);
+        back_img = v.findViewById(R.id.btn_back);
+        favorite_img = v.findViewById(R.id.btn_favorite);
+        rv_penjual = v.findViewById(R.id.rv_penjualmakanan);
+        rv_penjual.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        penjualMakananAdapter = new PenjualMakananAdapter(getContext());
         database = FirebaseDatabase.getInstance();
         foodRef = database.getReference("Foods");
         Bundle bundle = getArguments();
@@ -71,7 +76,10 @@ public class detail_foodFragment extends Fragment {
                 FoodModel foodModel=dataSnapshot.getValue(FoodModel.class);
                 //Log.d("text",foodModel.getKategori());
                 nama.setText(foodModel.getNama());
-                kalori.setText(String.valueOf(foodModel.getKalori()));
+                karbohidrat.setText(String.valueOf(foodModel.getKarbohidrat()+" g"));
+                protein.setText(String.valueOf(foodModel.getProtein()+" g"));
+                lemak.setText(String.valueOf(foodModel.getLemak()+" g"));
+                kalori.setText(String.valueOf(foodModel.getKalori()+" kcal"));
                 kategori.setText(foodModel.getKategori());
                 deskripsi.setText(foodModel.getDeskripsi());
                 Glide.with(getContext()).load(foodModel.getImg_url()).into(food_img);

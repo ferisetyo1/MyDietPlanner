@@ -49,7 +49,7 @@ public class HorizontalFoodAdapter extends RecyclerView.Adapter<HorizontalFoodAd
         final HorizontalViewHolder cvh = holder;
         Log.d("namaMakanan", this.listFood.get(position).getFoodKey());
         holder.txtMakanan.setText(namaMakanan);
-        holder.txtKalori.setText(String.valueOf(kalori)+"kal");
+        holder.txtKalori.setText(String.valueOf(kalori)+" Kal");
         Glide.with(context).load(img_url).into(holder.imgMakanan);
         holder.cv_hfood.setOnClickListener(new View.OnClickListener() {
             @Override

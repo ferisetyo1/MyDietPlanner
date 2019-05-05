@@ -61,25 +61,25 @@ public class FoodFragment extends Fragment {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String title = (String) dataSnapshot1.child("kategori").getValue().toString();
                     String key = dataSnapshot1.getKey();
-                    if (title.equalsIgnoreCase("breakfast") && breakfast.size() <= 10) {
+                    if (title.equalsIgnoreCase("breakfast") && breakfast.size() <= 5) {
                         HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
                         foodModel.setFoodKey(key);
                         breakfast.add(foodModel);
                     }
 
-                    if (title.equalsIgnoreCase("lunch") && lunch.size() <= 10) {
+                    if (title.equalsIgnoreCase("lunch") && lunch.size() <= 5) {
                         HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
                         foodModel.setFoodKey(key);
                         lunch.add(foodModel);
                     }
 
-                    if (title.equalsIgnoreCase("dinner") && dinner.size() <= 10) {
+                    if (title.equalsIgnoreCase("dinner") && dinner.size() <= 5) {
                         HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
                         foodModel.setFoodKey(key);
                         dinner.add(foodModel);
                     }
 
-                    if (title.equalsIgnoreCase("snack") && snack.size() <= 10) {
+                    if (title.equalsIgnoreCase("snack") && snack.size() <= 5) {
                         HorizontalFoodModel foodModel = dataSnapshot1.getValue(HorizontalFoodModel.class);
                         foodModel.setFoodKey(key);
                         snack.add(foodModel);

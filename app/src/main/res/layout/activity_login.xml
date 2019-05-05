@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="MyDietPlanner"
             android:textSize="28sp"
-            android:fontFamily="@font/courgette_regular"/>
+            android:fontFamily="@font/fredokaone_regular"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="300dp"

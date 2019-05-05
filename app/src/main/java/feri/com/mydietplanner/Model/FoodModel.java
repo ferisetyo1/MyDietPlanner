@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class FoodModel {
     private String nama,deskripsi,img_url,kategori;
-    private int kalori;
+    private double kalori, karbohidrat, protein, lemak ;
     private ArrayList<PenjualMakananModel> penjualMakananModels;
 
     public FoodModel() {
     }
 
-    public FoodModel(String nama, String deskripsi, String img_url, String kategori, int kalori, ArrayList<PenjualMakananModel> penjualMakananModels) {
+    public FoodModel(String nama, String deskripsi, String img_url, String kategori, double kalori, ArrayList<PenjualMakananModel> penjualMakananModels) {
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.img_url = img_url;
@@ -45,13 +45,6 @@ public class FoodModel {
         this.img_url = img_url;
     }
 
-    public int getKalori() {
-        return kalori;
-    }
-
-    public void setKalori(int kalori) {
-        this.kalori = kalori;
-    }
 
     public String getNama() {
         return nama;
@@ -63,6 +56,38 @@ public class FoodModel {
 
     public ArrayList<PenjualMakananModel> getPenjualMakananModels() {
         return penjualMakananModels;
+    }
+
+    public double getKalori() {
+        return kalori;
+    }
+
+    public void setKalori(double kalori) {
+        this.kalori = kalori;
+    }
+
+    public double getKarbohidrat() {
+        return karbohidrat;
+    }
+
+    public void setKarbohidrat(double karbohidrat) {
+        this.karbohidrat = karbohidrat;
+    }
+
+    public double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public double getLemak() {
+        return lemak;
+    }
+
+    public void setLemak(double lemak) {
+        this.lemak = lemak;
     }
 
     public void setPenjualMakananModels(ArrayList<PenjualMakananModel> penjualMakananModels) {
