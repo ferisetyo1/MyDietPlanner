@@ -6,9 +6,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import feri.com.mydietplanner.Activity.MainActivity;
+import feri.com.mydietplanner.Adapter.HorizontalFoodAdapter;
 import feri.com.mydietplanner.Adapter.VerticalFoodAdapter;
 import feri.com.mydietplanner.Model.HorizontalFoodModel;
 import feri.com.mydietplanner.Model.VerticalFoodModel;
@@ -29,9 +34,10 @@ public class FoodFragment extends Fragment {
     View v;
     FirebaseDatabase database;
     DatabaseReference foodRef;
-    RecyclerView verticalRecycler;
+    RecyclerView verticalRecycler,horizontalRecycler;
     VerticalFoodAdapter vFoodAdapter;
     ImageButton img_btn_favorit;
+    EditText search;
     private ArrayList<VerticalFoodModel> vFoodModels = new ArrayList<VerticalFoodModel>();
 
     @Nullable
@@ -44,9 +50,12 @@ public class FoodFragment extends Fragment {
         foodRef = database.getReference("Foods");
 
         verticalRecycler = v.findViewById(R.id.rv_vertical);
+        horizontalRecycler=v.findViewById(R.id.rv_horizontal2);
+        horizontalRecycler.setHasFixedSize(true);
         verticalRecycler.setHasFixedSize(true);
 
         verticalRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        horizontalRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         loadData();
         img_btn_favorit.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +69,58 @@ public class FoodFragment extends Fragment {
                         .commit();
             }
         });
+        search=v.findViewById(R.id.et_search);
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length()!=0){
+                    horizontalRecycler.setVisibility(View.VISIBLE);
+                    verticalRecycler.setVisibility(View.INVISIBLE);
+                    getSearchData(search.getText().toString());
+                }else{
+                    horizontalRecycler.setVisibility(View.INVISIBLE);
+                    verticalRecycler.setVisibility(View.VISIBLE);
+                    loadData();
+                }
+            }
+        });
         return v;
+    }
+
+    private void getSearchData(final String s) {
+        final ArrayList<HorizontalFoodModel> horizontalFoodModels=new ArrayList<>();
+        foodRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    String nama = (String) dataSnapshot1.child("nama").getValue().toString();
+                    if (nama.toLowerCase().contains(s)){
+                        //Log.d("test",dataSnapshot1.getValue().toString());
+                        HorizontalFoodModel horizontalFoodModel=dataSnapshot1.getValue(HorizontalFoodModel.class);
+                        horizontalFoodModel.setFoodKey(dataSnapshot1.getKey());
+                        horizontalFoodModels.add(horizontalFoodModel);
+                    }
+                }
+                HorizontalFoodAdapter horizontalFoodAdapter=new HorizontalFoodAdapter(getActivity(),horizontalFoodModels);
+                horizontalFoodAdapter.notifyDataSetChanged();
+                horizontalRecycler.setAdapter(horizontalFoodAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void loadData() {
