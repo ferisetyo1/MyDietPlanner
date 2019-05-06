@@ -95,7 +95,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:drawableLeft="@drawable/lokasi"
-                                android:text="@string/lokasi"
+                                android:text="@string/alamat"
                                 android:textSize="20sp"/>
 
                             <TextView

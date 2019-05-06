@@ -19,14 +19,14 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAlF4iIz-nnjxtQ3H2W29ISWK36V9c3zg8"
             />
-        <activity android:name=".Activity.WishlistActivity"/>
-        <activity android:name=".Activity.CekBMIandTipsActivity" />
+
         <activity android:name=".Activity.ResetPasswordActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.MainActivity"/>
         <activity android:name=".Activity.MapsMakananActivity"/>
         <activity android:name=".Activity.DataProfilActivity"/>
+        <activity android:name=".Activity.EditProfil"/>
         <activity android:name=".Activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

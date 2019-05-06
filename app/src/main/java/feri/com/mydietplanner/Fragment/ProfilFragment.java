@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import feri.com.mydietplanner.Activity.EditProfil;
 import feri.com.mydietplanner.Activity.LoginActivity;
 import feri.com.mydietplanner.Model.UserModel;
 import feri.com.mydietplanner.R;
@@ -28,7 +29,7 @@ public class ProfilFragment extends Fragment {
     View v;
 
     TextView txt_nama, txt_email, txt_umur, txt_berat, txt_tinggi;
-    Button btn_logout;
+    Button btn_logout,btn_editprofil;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     FirebaseDatabase database;
@@ -47,13 +48,20 @@ public class ProfilFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         database = FirebaseDatabase.getInstance();
-
+        btn_editprofil=v.findViewById(R.id.btnEdit);
+        btn_editprofil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),EditProfil.class));
+            }
+        });
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();
             }
         });
+
         userRef = database.getReference("Users").child(mUser.getUid());
         loadData();
         return v;

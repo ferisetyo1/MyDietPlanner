@@ -1,6 +1,7 @@
 package feri.com.mydietplanner.Fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import feri.com.mydietplanner.Activity.MainActivity;
 import feri.com.mydietplanner.Adapter.HorizontalFoodAdapter;
 import feri.com.mydietplanner.Adapter.PenjualMakananAdapter;
 import feri.com.mydietplanner.Model.FoodModel;
@@ -37,6 +41,8 @@ public class detail_foodFragment extends Fragment {
     View v;
     FirebaseDatabase database;
     DatabaseReference foodRef,wishRef;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
     String foodkey;
 
     private TextView nama, kalori,deskripsi, karbohidrat, protein, lemak;
@@ -44,7 +50,7 @@ public class detail_foodFragment extends Fragment {
     private RecyclerView rv_penjual;
     private PenjualMakananAdapter penjualMakananAdapter;
     private TextView kategori;
-    private ImageButton back_img,favorite_img;
+    private ImageButton back_img,favorite_img,backbuttonbar;
 
     @Nullable
     @Override
@@ -64,30 +70,57 @@ public class detail_foodFragment extends Fragment {
         rv_penjual.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         penjualMakananAdapter = new PenjualMakananAdapter(getContext());
         database = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
         foodRef = database.getReference("Foods");
         Bundle bundle = getArguments();
         if (bundle != null) {
             foodkey=bundle.getString("foodkey");
             Log.d("foodkey",foodkey);
         }
-        wishRef = FirebaseDatabase.getInstance().getReference("wishlist");
-        final String nama = bundle.getString("Nama");
-        final String deskripsi = bundle.getString("Desk");
-        final String img_url = bundle.getString("Img");
-        final String kategori = bundle.getString("Kategori");
-        final int kalori = bundle.getInt("Kalori");
+        wishRef = database.getReference("Favorit");
+        final String id = firebaseUser.getUid();
+        backbuttonbar=v.findViewById(R.id.btn_back);
+        backbuttonbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).onBackPressed();
+            }
+        });
         favorite_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(favorite_img.isClickable()==true){
-                    String id = wishRef.push().getKey();
-                    HorizontalFoodModel fm = new HorizontalFoodModel(nama, deskripsi, img_url, kategori,kalori);
-                    wishRef.child(id).setValue(fm);
-                    Toast.makeText(getActivity(), "Ditambahkan ke wishlist",Toast.LENGTH_LONG).show();
-                }
+                wishRef.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(!dataSnapshot.hasChild(foodkey)){
+                            wishRef.child(id).child(foodkey).setValue(foodkey);
+                            foodRef.child(foodkey).child("userid").child(id).setValue(id);
+                            favorite_img.setBackgroundResource(R.drawable.heart_isi);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                favorite_img.setBackgroundTintList(getResources().getColorStateList(R.color.red));
+                            }
+                            Toast.makeText(getActivity(), "Ditambahkan ke favorit",Toast.LENGTH_LONG).show();
+                        }else{
+                            wishRef.child(id).child(foodkey).removeValue();
+                            foodRef.child(foodkey).child("userid").child(id).removeValue();
+                            favorite_img.setBackgroundResource(R.drawable.heart_kosong);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                favorite_img.setBackgroundTintList(getResources().getColorStateList(R.color.black));
+                            }
+                            Toast.makeText(getActivity(), "Dihapus dar favorit",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
         loadData();
+
         return v;
     }
 
@@ -105,6 +138,12 @@ public class detail_foodFragment extends Fragment {
                 kalori.setText(String.valueOf(foodModel.getKalori()+" kcal"));
                 kategori.setText(foodModel.getKategori());
                 deskripsi.setText(foodModel.getDeskripsi());
+                if (dataSnapshot.child("userid").hasChild(firebaseUser.getUid())){
+                    favorite_img.setBackgroundResource(R.drawable.heart_isi);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        favorite_img.setBackgroundTintList(getResources().getColorStateList(R.color.red));
+                    }
+                }
                 Glide.with(getContext()).load(foodModel.getImg_url()).into(food_img);
                 ArrayList<PenjualMakananModel>penjualMakananModels=new ArrayList<>();
                 for(DataSnapshot dataSnapshot1:dataSnapshot.child("penjual").getChildren()){

@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import feri.com.mydietplanner.Activity.MainActivity;
 import feri.com.mydietplanner.Adapter.VerticalFoodAdapter;
 import feri.com.mydietplanner.Model.HorizontalFoodModel;
 import feri.com.mydietplanner.Model.VerticalFoodModel;
@@ -29,6 +31,7 @@ public class FoodFragment extends Fragment {
     DatabaseReference foodRef;
     RecyclerView verticalRecycler;
     VerticalFoodAdapter vFoodAdapter;
+    ImageButton img_btn_favorit;
     private ArrayList<VerticalFoodModel> vFoodModels = new ArrayList<VerticalFoodModel>();
 
     @Nullable
@@ -36,6 +39,7 @@ public class FoodFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = (View) inflater.inflate(R.layout.fragment_food, container, false);
 
+        img_btn_favorit=v.findViewById(R.id.img_btn_favorit);
         database = FirebaseDatabase.getInstance();
         foodRef = database.getReference("Foods");
 
@@ -45,7 +49,17 @@ public class FoodFragment extends Fragment {
         verticalRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
         loadData();
-
+        img_btn_favorit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity())
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fl_container,new FavoritFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         return v;
     }
 
@@ -91,6 +105,7 @@ public class FoodFragment extends Fragment {
                 VerticalFoodModel v_dinner = new VerticalFoodModel(_title[2],dinner);
                 VerticalFoodModel v_snack = new VerticalFoodModel(_title[3],snack);
 
+                vFoodModels.clear();
                 vFoodModels.add(v_breakfast);
                 vFoodModels.add(v_lunch);
                 vFoodModels.add(v_dinner);

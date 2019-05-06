@@ -45,24 +45,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are You Sure Want to Exit?")
-                .setCancelable(true)//tidak bisa tekan tombol back
-                //jika pilih yess
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        moveTaskToBack(true);
-                        finish();
-                    }
-                })
-                //jika pilih no
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                }).show();
-    }
+//    public void onBackPressed() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setMessage("Are You Sure Want to Exit?")
+//                .setCancelable(true)//tidak bisa tekan tombol back
+//                //jika pilih yess
+//                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        moveTaskToBack(true);
+//                        finish();
+//                    }
+//                })
+//                //jika pilih no
+//                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.cancel();
+//                    }
+//                }).show();
+//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

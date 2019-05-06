@@ -10,7 +10,7 @@
     <!--fragment profil-->
     <string name="btn_edit">Edit</string>
     <string name="nama">Parto</string>
-    <string name="lokasi">Klojen, Malang</string>
+    <string name="alamat">Klojen, Malang</string>
     <string name="title_bio">Bio</string>
     <string name="txt_bio">Aku ingin sendiri</string>
     <string name="title_email">Email</string>

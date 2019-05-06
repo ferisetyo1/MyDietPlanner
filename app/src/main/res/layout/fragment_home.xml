@@ -238,15 +238,6 @@
                 android:background="@color/colorPrimary"
                 android:visibility="invisible">
                 <TextView
-                    android:id="@+id/txt_Resiko"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Tips kwadasdjhhqeiufhqefqe"
-                    android:textSize="15sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/karla_bold"/>
-                <TextView
                     android:id="@+id/txt_Kategori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -255,6 +246,17 @@
                     android:textSize="15sp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/karla_bold"/>
+
+                <TextView
+                    android:id="@+id/txt_Resiko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Tips kwadasdjhhqeiufhqefqe"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/karla_bold"/>
+
                 <TextView
                     android:id="@+id/txt_tips"
                     android:layout_width="wrap_content"

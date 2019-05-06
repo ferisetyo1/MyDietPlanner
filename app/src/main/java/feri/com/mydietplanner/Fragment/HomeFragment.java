@@ -1,6 +1,7 @@
 package feri.com.mydietplanner.Fragment;
 
 import android.content.Intent;
+import android.icu.text.DecimalFormat;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,32 +32,34 @@ import feri.com.mydietplanner.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     View v;
-    TextView txt_hasil,txt_tips,txt_resiko,txt_kategori, txt_member, txt_bmi;
-    EditText berat,tinggi;
-    Button btn_hitungbmi,btn_cekTips;
+    TextView txt_hasil, txt_tips, txt_resiko, txt_kategori, txt_member, txt_bmi;
+    EditText berat, tinggi;
+    Button btn_hitungbmi, btn_cekTips;
     LinearLayout layout_tips, layout_hasil;
     CircleImageView circleImageView;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference userRef,tipsRef;
+    DatabaseReference userRef, tipsRef;
     private double bmi;
+    private TextView txt_kategoriBMI;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = (View) inflater.inflate(R.layout.fragment_home, container, false);
-        berat=v.findViewById(R.id.et_berat);
-        tinggi=v.findViewById(R.id.et_tinggi);
-        txt_hasil=v.findViewById(R.id.txt_hasil);
-        txt_kategori=v.findViewById(R.id.txt_Kategori);
-        txt_resiko=v.findViewById(R.id.txt_Resiko);
-        txt_tips=v.findViewById(R.id.txt_tips);
-        txt_member=v.findViewById(R.id.txt_member);
+        berat = v.findViewById(R.id.et_berat);
+        tinggi = v.findViewById(R.id.et_tinggi);
+        txt_hasil = v.findViewById(R.id.txt_hasil);
+        txt_kategori = v.findViewById(R.id.txt_Kategori);
+        txt_kategoriBMI = v.findViewById(R.id.txt_kategoriBMI);
+        txt_resiko = v.findViewById(R.id.txt_Resiko);
+        txt_tips = v.findViewById(R.id.txt_tips);
+        txt_member = v.findViewById(R.id.txt_member);
         txt_bmi = v.findViewById(R.id.txt_bmi);
-        circleImageView=v.findViewById(R.id.user_img);
-        btn_hitungbmi=v.findViewById(R.id.btn_hitungBMI);
-        btn_cekTips=v.findViewById(R.id.btn_cekTips);
+        circleImageView = v.findViewById(R.id.user_img);
+        btn_hitungbmi = v.findViewById(R.id.btn_hitungBMI);
+        btn_cekTips = v.findViewById(R.id.btn_cekTips);
         layout_tips = v.findViewById(R.id.lyt_tips);
         layout_hasil = v.findViewById(R.id.lyt_hasil);
         mAuth = FirebaseAuth.getInstance();
@@ -71,9 +74,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserModel userModel = dataSnapshot.getValue(UserModel.class);
-                txt_member.setText("Hello, "+userModel.getNama()+"!");
-                txt_bmi.setText(String.valueOf(userModel.getBmi()));
-                Glide.with(getContext()).load(userModel.getImg_url()).into(circleImageView);
+                txt_member.setText("Hello, " + userModel.getNama() + "!");
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    txt_bmi.setText(String.valueOf(df.format(userModel.getBmi())));
+                }else{
+                    txt_bmi.setText(String.valueOf(userModel.getBmi()));
+                }
+                if (isAdded()) {
+                    Glide.with(getActivity()).load(userModel.getImg_url()).into(circleImageView);
+                }
+                double _bmi = userModel.getBmi();
+                if (_bmi == 0) {
+                    txt_kategoriBMI.setText("Anda belum pernah melakukan pengecekan");
+                } else {
+                    String kategori;
+                    if (_bmi < 18.5) {
+                        kategori = "tips1";
+                    } else if (_bmi < 25) {
+                        kategori = "tips2";
+                    } else if (_bmi < 30) {
+                        kategori = "tips3";
+                    } else {
+                        kategori = "tips4";
+                    }
+
+                    DatabaseReference kategoriref = tipsRef.child(kategori);
+                    kategoriref.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String kategori = dataSnapshot.child("nama").getValue().toString();
+                            txt_kategoriBMI.setText("Kategori BMI yang anda miliki adalah " + kategori);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
             }
 
             @Override
@@ -87,20 +126,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_hitungBMI:
                 hitungBMI();
                 break;
             case R.id.btn_cekTips:
-                Log.d("cektipsclik","clicked");
+                Log.d("cektipsclik", "clicked");
                 cekTips();
                 break;
         }
     }
 
     private void cekTips() {
-        if (bmi==0){
-            Toast.makeText(getContext(),"Hitung BMI terlebih dahulu",Toast.LENGTH_LONG);
+        if (bmi == 0) {
+            Toast.makeText(getContext(), "Hitung BMI terlebih dahulu", Toast.LENGTH_LONG);
             return;
         }
         userRef.addValueEventListener(new ValueEventListener() {
@@ -120,7 +159,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 } else {
                     kategori = "tips4";
                 }
-                Log.d("kategori",kategori);
+                Log.d("kategori", kategori);
 
                 //ambil data txt_kategori dan txt_resiko
                 DatabaseReference kategoriref = tipsRef.child(kategori);
@@ -130,29 +169,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         String kategori = dataSnapshot.child("nama").getValue().toString();
                         String resiko = dataSnapshot.child("resiko").getValue().toString();
 
-                        txt_resiko.setText(resiko);
-                        txt_kategori.setText(kategori);
+                        txt_resiko.setText("Resiko : \n"+resiko);
+                        txt_kategori.setText("Kategori :\n"+kategori);
 
-                        int key_umur=0;
-                        if(umur<20){
-                            key_umur=10;
-                        }else if(umur<30){
-                            key_umur=20;
-                        }else if(umur<40){
-                            key_umur=30;
-                        }else{
-                            key_umur=40;
+                        int key_umur = 0;
+                        if (umur < 20) {
+                            key_umur = 10;
+                        } else if (umur < 30) {
+                            key_umur = 20;
+                        } else if (umur < 40) {
+                            key_umur = 30;
+                        } else {
+                            key_umur = 40;
                         }
 
-                        DatabaseReference _tipsRef=tipsRef.child(dataSnapshot.getKey()).child("umur")
+                        DatabaseReference _tipsRef = tipsRef.child(dataSnapshot.getKey()).child("umur")
                                 .child(String.valueOf(key_umur));
 
                         _tipsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String Tips=dataSnapshot.child("tips").getValue().toString();
-                                txt_tips.setText(Tips);
-                                Log.d("tips",Tips);
+                                String Tips = dataSnapshot.child("tips").getValue().toString();
+                                txt_tips.setText("Tips :\n"+Tips);
+                                Log.d("tips", Tips);
                             }
 
                             @Override
@@ -164,7 +203,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.d("error","error ambil data kategori");
+                        Log.d("error", "error ambil data kategori");
                     }
                 });
                 layout_tips.setVisibility(View.VISIBLE);
@@ -172,14 +211,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("error","error ambil data user");
+                Log.d("error", "error ambil data user");
             }
         });
     }
 
     private void hitungBMI() {
-        String txt_berat=berat.getText().toString();
-        String txt_tinggi=tinggi.getText().toString();
+        String txt_berat = berat.getText().toString();
+        String txt_tinggi = tinggi.getText().toString();
         if (TextUtils.isEmpty(txt_berat)) {
             berat.setError("field berat masih kosong");
             berat.requestFocus();
@@ -194,11 +233,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         userRef.child("berat").setValue(Integer.parseInt(txt_berat));
         userRef.child("tinggi").setValue(Integer.parseInt(txt_tinggi));
 
-        double _berat=Double.parseDouble(txt_berat);
-        double _tinggi=Double.parseDouble(txt_tinggi);
+        double _berat = Double.parseDouble(txt_berat);
+        double _tinggi = Double.parseDouble(txt_tinggi);
 
-        this.bmi=_berat*10000/(_tinggi*_tinggi);
-        txt_hasil.setText(""+this.bmi);
+        this.bmi = _berat * 10000 / (_tinggi * _tinggi);
+        txt_hasil.setText("" + this.bmi);
         layout_hasil.setVisibility(View.VISIBLE);
+        userRef.child("bmi").setValue(bmi);
     }
 }
