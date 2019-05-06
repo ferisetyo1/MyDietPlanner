@@ -1,7 +1,9 @@
 package feri.com.mydietplanner.Adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +19,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import feri.com.mydietplanner.Activity.MainActivity;
+import feri.com.mydietplanner.Fragment.FragmentMorefood;
+import feri.com.mydietplanner.Fragment.detail_foodFragment;
 import feri.com.mydietplanner.Model.HorizontalFoodModel;
 import feri.com.mydietplanner.Model.VerticalFoodModel;
 import feri.com.mydietplanner.R;
@@ -48,11 +53,29 @@ public class VerticalFoodAdapter extends RecyclerView.Adapter<VerticalFoodAdapte
         ArrayList<HorizontalFoodModel> listfood = verticalFoodModel.getArrayList();
 
         verticalViewHolder.txtTitle.setText(title);
+
+        final String kategori=listfood.get(0).getKategori();
         HorizontalFoodAdapter horizontalFoodAdapter = new HorizontalFoodAdapter(context, listfood);
 
         verticalViewHolder.recyclerView.setHasFixedSize(true);
         verticalViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
         verticalViewHolder.recyclerView.setAdapter(horizontalFoodAdapter);
+
+        verticalViewHolder.btnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle=new Bundle();
+                bundle.putString("kategori",kategori);
+                Fragment fragment=new FragmentMorefood();
+                fragment.setArguments(bundle);
+                ((MainActivity) context)
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fl_container,fragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override
