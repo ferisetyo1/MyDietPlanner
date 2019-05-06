@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import feri.com.mydietplanner.Activity.MainActivity;
@@ -43,6 +45,7 @@ public class AdapterFavorit extends RecyclerView.Adapter<AdapterFavorit.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         HorizontalFoodModel mb = HW.get(position);
         final String foodKey=mb.getFoodKey();
+        Glide.with(context).load(mb.getImg_url()).into(holder.iv);
         holder.tv.setText(mb.getNama());
         holder.kal.setText(mb.getKalori()+"");
         holder.cv.setOnClickListener(new View.OnClickListener() {

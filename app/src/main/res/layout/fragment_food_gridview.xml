@@ -52,7 +52,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="120dp"
+        android:paddingTop="130dp"
+        android:paddingBottom="60dp"
         attribute:listitem="@layout/item_food_horizontal"
         android:orientation="vertical">
 

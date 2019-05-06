@@ -32,7 +32,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import feri.com.mydietplanner.R;
 
 
-public class DataProfilActivity extends AppCompatActivity implements View.OnClickListener{
+public class DataProfilActivity extends AppCompatActivity implements View.OnClickListener {
     CircleImageView img_profil;
     EditText alamat, umur, telp;
     Button btn_submit;
@@ -72,7 +72,7 @@ public class DataProfilActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.img_avatar:
                 chooseImg();
                 break;
@@ -87,8 +87,8 @@ public class DataProfilActivity extends AppCompatActivity implements View.OnClic
 
         databaseReference.child("alamat").setValue(alamat.getText().toString());
         databaseReference.child("umur").setValue(Integer.parseInt(umur.getText().toString()));
-        databaseReference.child("telp").setValue(umur.getText().toString());
-        startActivity(new Intent(DataProfilActivity.this,MainActivity.class));
+        databaseReference.child("telp").setValue(telp.getText().toString());
+        onBackPressed();
     }
 
     @Override
@@ -108,8 +108,7 @@ public class DataProfilActivity extends AppCompatActivity implements View.OnClic
                 // Setting up bitmap selected image into ImageView.
                 img_profil.setImageBitmap(bitmap);
 
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -122,7 +121,7 @@ public class DataProfilActivity extends AppCompatActivity implements View.OnClic
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
 
         // Returning the file Extension.
-        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri)) ;
+        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
 
     }
 
@@ -191,7 +190,8 @@ public class DataProfilActivity extends AppCompatActivity implements View.OnClic
         }
 
     }
-        private void chooseImg() {
+
+    private void chooseImg() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);

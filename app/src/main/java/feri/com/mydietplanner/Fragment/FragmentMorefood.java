@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +34,7 @@ public class FragmentMorefood extends Fragment {
     private String kategori;
     final ArrayList<HorizontalFoodModel> horizontalFoodModels = new ArrayList<>();
     EditText search;
+    private TextView txt_kategori;
 
     @Nullable
     @Override
@@ -49,6 +51,8 @@ public class FragmentMorefood extends Fragment {
         if (bundle!=null){
             kategori=bundle.getString("kategori");
         }
+        txt_kategori=v.findViewById(R.id.txt_kategori);
+        txt_kategori.setText(kategori);
 
         loadData();
 

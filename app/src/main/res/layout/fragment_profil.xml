@@ -79,7 +79,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/txt_alamat"
+                                android:id="@+id/txt_nama"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="60dp"
@@ -90,7 +90,7 @@
                                 android:textColor="@color/colorPrimary"/>
 
                             <TextView
-                                android:id="@+id/txt_lokasi"
+                                android:id="@+id/txt_alamat"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
