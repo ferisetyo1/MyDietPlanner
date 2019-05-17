@@ -1,0 +1,723 @@
+{
+  "Favorit" : {
+    "DmiQX4tcUybn4Fnca8ez0m0ZG8R2" : {
+      "Food_10" : "Food_10",
+      "Food_6" : "Food_6"
+    },
+    "dmn3P2V2SwOESxVb14jSBiIUf5r1" : {
+      "Food_6" : "Food_6"
+    },
+    "n5eDu6FyV2N5igNwU8uld6TfJUy1" : {
+      "Food_1" : "Food_1",
+      "Food_14" : "Food_14"
+    },
+    "tSyOvkw13mfjp6kRsF4xAvUluBP2" : {
+      "Food_11" : "Food_11",
+      "Food_13" : "Food_13",
+      "Food_6" : "Food_6"
+    }
+  },
+  "Foods" : {
+    "Food_1" : {
+      "deskripsi" : "Kandungan glukosa yang ada pada pisang sangat bagus untuk membantu pembentukan otot tubuh",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fpisang.jpg?alt=media&token=01e7b757-140b-444d-a1f9-d1d0dd7f28c1",
+      "kalori" : 100,
+      "karbohidrat" : 0.25,
+      "kategori" : "snack",
+      "lemak" : 0.2,
+      "nama" : "Pisang",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 10000,
+          "lat" : -7.954315,
+          "long" : 112.620312,
+          "nama" : "Indomaret Panjaitan Malang"
+        },
+        "penjual2" : {
+          "harga" : 11000,
+          "lat" : -7.938186,
+          "long" : 112.590528,
+          "nama" : "Gedhang Ganteng"
+        },
+        "penjual3" : {
+          "harga" : 20000,
+          "lat" : -7.932373,
+          "long" : 112.644473,
+          "nama" : "Pisang Nugget Ini Malang"
+        }
+      },
+      "protein" : 1.2,
+      "userid" : {
+        "n5eDu6FyV2N5igNwU8uld6TfJUy1" : "n5eDu6FyV2N5igNwU8uld6TfJUy1"
+      }
+    },
+    "Food_10" : {
+      "deskripsi" : "Makanan yang memiliki protein tinggi dan kandungan asam lemak omega-3 yang dibutuhkan oleh tubuh",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fikan%20tuna.jpg?alt=media&token=127c6a1a-c354-4648-a987-bab436893d16",
+      "kalori" : 108,
+      "karbohidrat" : 0,
+      "kategori" : "lunch",
+      "lemak" : 0.95,
+      "nama" : "Ikan Tuna",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 23000,
+          "lat" : -7.956017,
+          "long" : 112.618189,
+          "nama" : "Sushi Station"
+        },
+        "penjual2" : {
+          "harga" : 55000,
+          "lat" : -7.968446,
+          "long" : 112.613323,
+          "nama" : "Ikan Segar galunggung"
+        }
+      },
+      "protein" : 23.38,
+      "userid" : {
+        "DmiQX4tcUybn4Fnca8ez0m0ZG8R2" : "DmiQX4tcUybn4Fnca8ez0m0ZG8R2"
+      }
+    },
+    "Food_11" : {
+      "deskripsi" : "Beras merah mengandung serat yang tinggi, sehingga ampuh untuk melancarkan penceranaan dan membuang lemak berlebih yang mengendap di perut dan usus besar. Selain itu tingkat kalorinya pun cukup rendah, sehingga mudah untuk diolah oleh tubuh menjadi energi dan tidak banyak yang tersisa menjadi lemak",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fnasi%20merah.jpg?alt=media&token=e9d01101-3300-4134-a215-48284f4ed663",
+      "kalori" : 110,
+      "karbohidrat" : 23,
+      "kategori" : "lunch",
+      "lemak" : 0.9,
+      "nama" : "Nasi Merah",
+      "penjual" : {
+        "penjual2" : {
+          "harga" : 6000,
+          "lat" : -7.975718,
+          "long" : 112.612778,
+          "nama" : "Healthy Cafe Malang"
+        }
+      },
+      "protein" : 2.6,
+      "userid" : {
+        "tSyOvkw13mfjp6kRsF4xAvUluBP2" : "tSyOvkw13mfjp6kRsF4xAvUluBP2"
+      }
+    },
+    "Food_12" : {
+      "deskripsi" : "Bayam memiliki banyak nutrisi termasuk vitamin dan mineral yang baik untuk tubuh. Bayam juga mengandung banyak serat dan antioksidan. Selain itu, sayuran hijau yang satu ini mengandung sedikit kalori dan lemak.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fsayur%20bayam.jpg?alt=media&token=5dd13c22-13d3-4fe4-abc0-2cbf6366ad6c",
+      "kalori" : 36,
+      "karbohidrat" : 6.5,
+      "kategori" : "dinner",
+      "lemak" : 0.5,
+      "nama" : "Sayur Bayam",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 15000,
+          "lat" : -7.95263,
+          "long" : 112.600934,
+          "nama" : "Sayur Mak Juati"
+        },
+        "penjual2" : {
+          "harga" : 15000,
+          "lat" : -7.967218,
+          "long" : 112.628979,
+          "nama" : "Warung SA Vegetarian"
+        },
+        "penjual3" : {
+          "harga" : 8000,
+          "lat" : -7.983382,
+          "long" : 112.60999,
+          "nama" : "Metta Vegetarian"
+        }
+      },
+      "protein" : 3.5
+    },
+    "Food_13" : {
+      "deskripsi" : "Coklat hitam atau biasa dikenal dengan sebutan dark chocolate, bermanfaat menurunkan tekanan darah dan memiliki kandungan antioksidan yang tinggi. Sebaiknya konsumsi coklat hitam tanpa campuran susu, agar manfaatnya bisa didapat secara maksimal.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fcoklat%20hitam.jpg?alt=media&token=0a0ccf54-9746-4dbd-a5ec-ea58e1b838ad",
+      "kalori" : 504,
+      "karbohidrat" : 61,
+      "kategori" : "snack",
+      "lemak" : 31,
+      "nama" : "Coklat Hitam",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 17000,
+          "lat" : -7.960557,
+          "long" : 112.626036,
+          "nama" : "Lwegee Chocolate Gallery"
+        },
+        "penjual2" : {
+          "harga" : 24000,
+          "lat" : -7.94177,
+          "long" : 112.619169,
+          "nama" : "kedai cokelat"
+        }
+      },
+      "protein" : 4.9,
+      "userid" : {
+        "tSyOvkw13mfjp6kRsF4xAvUluBP2" : "tSyOvkw13mfjp6kRsF4xAvUluBP2"
+      }
+    },
+    "Food_14" : {
+      "deskripsi" : " manfaat unggulan yang paling terkenal pada oatmeal adalah fungsinya dalam menurunkan lemak darah tubuh utamanya lemak jahat atau LDL.Kandungan seratnya pun adalah serat unik yang bernama beta-glucan. Serat inilah yang berperan menurunkan kadar kolesterol jahat, gula, dan insulin dalam darah. Selain kaya serat, vitamin dan mineral, oat juga mengandung antioksidan yang dipercaya mampu melindungi Anda dari risiko penyakit jantung.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2FOatmeal.jpg?alt=media&token=dd5e7f80-d3e6-47d0-8dbb-c59027cc7691",
+      "kalori" : 67,
+      "karbohidrat" : 12,
+      "kategori" : "breakfast",
+      "lemak" : 1.4,
+      "nama" : "Oatmeal",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 39000,
+          "lat" : -7.956727,
+          "long" : 112.617694,
+          "nama" : "Starbucks Transmart"
+        },
+        "penjual2" : {
+          "harga" : 54000,
+          "lat" : -7.972748,
+          "long" : 112.61668,
+          "nama" : "Lannie's Cake Shop"
+        },
+        "penjual3" : {
+          "harga" : 48000,
+          "lat" : -7.97436,
+          "long" : 112.625396,
+          "nama" : "Tarton Patisserie"
+        }
+      },
+      "protein" : 2.4,
+      "userid" : {
+        "n5eDu6FyV2N5igNwU8uld6TfJUy1" : "n5eDu6FyV2N5igNwU8uld6TfJUy1"
+      }
+    },
+    "Food_15" : {
+      "deskripsi" : "Rutin mengonsumsi roti gandum mampu meningkatkan kesehatan pencernaan, yaitu dengan membantu melancarkan gerakan usus dan merangsang pertumbuhan bakteri baik di dalam usus, sehingga buang air besar menjadi lebih lancar. Selain itu,  mengonsumsi roti jenis ini juga dapat mengurangi risiko diabetes tipe 2, obesitas, beberapa jenis kanker, dan penyakit jantung.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Froti%20gandum.jpg?alt=media&token=7a499cf4-a32f-4336-bacb-5b6f1cfcaa25",
+      "kalori" : 259,
+      "karbohidrat" : 48,
+      "kategori" : "dinner",
+      "lemak" : 1.4,
+      "nama" : "Roti Gandum",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 12000,
+          "lat" : -7.969991,
+          "long" : 112.617455,
+          "nama" : "Roti Andalas"
+        },
+        "penjual2" : {
+          "harga" : 12000,
+          "lat" : -7.975218,
+          "long" : 112.613035,
+          "nama" : "Chandra Bakery"
+        }
+      },
+      "protein" : 2.4
+    },
+    "Food_16" : {
+      "deskripsi" : "Manfaat brokoli terbukti sangat banyak diantaranya untuk kesehatan mata dan saraf dan ikut mengurangi tekanan darah. Disamping itu kandungan kalsium dan vitamin K yang tinggi membuat sayur brokoli juga sangat baik untuk kesehatan tulang. Hal menarik lain dari sayuran hijau ini adalah manfaatnya untuk kesehatan kulit juga cukup besar. ",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fbrokolii.jpg?alt=media&token=898ad2c5-9277-4a2f-b765-0a7365ea7c70",
+      "kalori" : 34,
+      "karbohidrat" : 6.64,
+      "kategori" : "dinner",
+      "lemak" : 0.37,
+      "nama" : "Brokoli",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 12000,
+          "lat" : -7.948706,
+          "long" : 112.627727,
+          "nama" : "Orens Brokoli"
+        },
+        "penjual2" : {
+          "harga" : 8000,
+          "lat" : -7.949858,
+          "long" : 112.611059,
+          "nama" : "Waroeng Dacil"
+        }
+      },
+      "protein" : 2.82
+    },
+    "Food_17" : {
+      "deskripsi" : "Jamur terdiri atas banyak sekali jenis. Salah satu yang bagus untuk mencegah obesitas adalah jamur kancing. Namun, perlu diperhatikan bahwa Anda harus memilih jamur kancing yang benar-benar berkualitas untuk dimasak dan dikonsumsi bersama makanan sehat pendukung diet lainnya. Jamur kancing pun dinyatakan tinggi viamin dan rendah kalori. Oleh karena itu, segeralah gantikan daging dengan jamur demi kesuksesan diet Anda.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fjamur%20kancing.jpg?alt=media&token=823e8f1b-b118-4e33-b15f-60562a2702ea",
+      "kalori" : 28,
+      "karbohidrat" : 5,
+      "kategori" : "dinner",
+      "lemak" : 0.5,
+      "nama" : "Jamur Kancing",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 14000,
+          "lat" : -7.97187,
+          "long" : 112.66189,
+          "nama" : "Jamur Nutrisi Malang"
+        }
+      }
+    },
+    "Food_18" : {
+      "deskripsi" : "Kentang mengandung protein yang tinggi. Selain itu, kandungan serat dan vitamin C dalam kentang juga melimpah. Kandungan kalorinya yang banyak dapat membuat perut menjadi cepat kenyang. Kalau ingin cepat-cepat menaikkan berat badan, kamu bisa mengolah kentang menjadi perkedel ataupun kentang goreng. Kalorinya lebih besar jika dibandingkan kentang rebus.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fkentank.jpg?alt=media&token=d74906cf-423a-45a6-96c9-ebc0fe836e1b",
+      "kalori" : 83,
+      "karbohidrat" : 19,
+      "kategori" : "lunch",
+      "lemak" : 0.1,
+      "nama" : "Kentang",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 17000,
+          "lat" : -7.971968,
+          "long" : 112.628815,
+          "nama" : "Kentang MBOK DE"
+        },
+        "penjual2" : {
+          "harga" : 12000,
+          "lat" : -7.955137,
+          "long" : 112.618601,
+          "nama" : "Tasnim Fries"
+        }
+      },
+      "protein" : 2
+    },
+    "Food_19" : {
+      "deskripsi" : "Selain karbohidrat, untuk menambah berat badan juga membutuhkan protein. Namun jangan khawatir bagi vegetarian, karena ada protein nabati yang bisa dikonsumsi. Salah satu sumber protein nabati yaitu kacang kedelai",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fkedelai.jpg?alt=media&token=5fc16f51-07e7-4579-a18a-570b6838902e",
+      "kalori" : 446,
+      "karbohidrat" : 30,
+      "kategori" : "dinner",
+      "lemak" : 20,
+      "nama" : "kedelai",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 6000,
+          "lat" : -7.966976,
+          "long" : 112.644664,
+          "nama" : "Kedelai Murni H&S"
+        },
+        "penjual2" : {
+          "harga" : 7000,
+          "lat" : -7.984113,
+          "long" : 112.634035,
+          "nama" : "Sari kedela Pak Wan"
+        }
+      },
+      "protein" : 36
+    },
+    "Food_2" : {
+      "deskripsi" : "Yoghurt bagus untuk menghilangkan lemak di tubuh",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fyogurt.jpg?alt=media&token=7064cb31-2c91-4080-a34c-793da5074ada",
+      "kalori" : 58.8,
+      "karbohidrat" : 3.6,
+      "kategori" : "snack",
+      "lemak" : 0.4,
+      "nama" : "Yoghurt",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 6700,
+          "lat" : -7.989048,
+          "long" : 112.59432,
+          "nama" : "Yoghurt Kids"
+        },
+        "penjual2" : {
+          "harga" : 8700,
+          "lat" : -7.783521,
+          "long" : 112.560276,
+          "nama" : "Sour Sally"
+        },
+        "penjual3" : {
+          "harga" : 4800,
+          "lat" : -7.967854,
+          "long" : 112.618222,
+          "nama" : "Griya Eskimo"
+        }
+      },
+      "protein" : 10
+    },
+    "Food_3" : {
+      "deskripsi" : " kalori rendah  terdapat pada kacang almond",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fkacang%20almond.jpg?alt=media&token=728f3551-c88b-48d9-ac42-843ce3408d4d",
+      "kalori" : 575.5,
+      "karbohidrat" : 22,
+      "kategori" : "snack",
+      "lemak" : 49,
+      "nama" : "Kacang Almond",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 13500,
+          "lat" : -7.960181,
+          "long" : 112.642063,
+          "nama" : "Wisata Rasa Malang - Almond Crispy Cheese"
+        }
+      },
+      "protein" : 21
+    },
+    "Food_4" : {
+      "deskripsi" : "mengandung asam lemak tak jenuh yang baik untuk tubuh, terutama buat mereka yang ingin menaikkan berat badan.  Satu buah alpukat besar mengandung sekitar 322 kalori, 29 gram lemak, dan 17 gram serat",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Falpukat.jpg?alt=media&token=40fb724e-b205-4f2f-bffa-bd034108d589",
+      "kalori" : 160.1,
+      "karbohidrat" : 8.5,
+      "kategori" : "snack",
+      "lemak" : 14.7,
+      "nama" : "Alpukat",
+      "penjual" : {
+        "penjual2" : {
+          "harga" : 15000,
+          "lat" : -7.828512,
+          "long" : 112.696286,
+          "nama" : "Agen Alpukat Mujaeni"
+        },
+        "penjual3" : {
+          "harga" : 13000,
+          "lat" : -7.946613,
+          "long" : 112.623103,
+          "nama" : "Jual Buah"
+        }
+      },
+      "protein" : 2
+    },
+    "Food_5" : {
+      "deskripsi" : "Menu daging steak mengandung leucine dan creatin, dua nutrisi yang memainkan nutrisi penting untuk meningkatkan massa otot",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fsteak.jpg?alt=media&token=4f588e98-57d9-4859-8814-69a824a3710b",
+      "kalori" : 270.5,
+      "karbohidrat" : 0,
+      "kategori" : "dinner",
+      "lemak" : 19,
+      "nama" : "Steak Daging Sapi",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 12000,
+          "lat" : -7.94639,
+          "long" : 112.618192,
+          "nama" : "Waroeng Steak And Shake"
+        },
+        "penjual2" : {
+          "harga" : 20000,
+          "lat" : -7.972932,
+          "long" : 112.613568,
+          "nama" : "Holycow! STEAKHOUSE by Chef Afit"
+        },
+        "penjual3" : {
+          "harga" : 21000,
+          "lat" : -7.946319,
+          "long" : 112.625789,
+          "nama" : "Tomoõ Steak x Grill"
+        },
+        "penjual4" : {
+          "harga" : 22000,
+          "lat" : -7.936997,
+          "long" : 112.638081,
+          "nama" : "ille Steak"
+        },
+        "penjual5" : {
+          "harga" : 22500,
+          "lat" : -7.954503,
+          "long" : 112.631526,
+          "nama" : "FLA HOTPLATE cabang 1"
+        }
+      },
+      "protein" : 27.3
+    },
+    "Food_6" : {
+      "deskripsi" : "Susu menawarkan tiga nutrisi penting untuk menaikkan berat badan seperti lemak, karbohidrat, dan protein. Terlebih, ia juga jadi sumber vitamin dan mineral, termasuk kalsium, untuk pembentukan tulang.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fsusu.jpg?alt=media&token=74fddb90-c551-41b8-8c77-6c706192094c",
+      "kalori" : 146,
+      "karbohidrat" : 11.03,
+      "kategori" : "breakfast",
+      "lemak" : 7.93,
+      "nama" : "Susu Sapi Murni",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 5000,
+          "lat" : -7.948172,
+          "long" : 112.609428,
+          "nama" : "Agen Susu Sapi Segar Indah"
+        },
+        "penjual2" : {
+          "harga" : 6000,
+          "lat" : -7.98028,
+          "long" : 112.612068,
+          "nama" : "SAM Fitness Store"
+        },
+        "penjual4" : {
+          "harga" : 6500,
+          "lat" : -7.98251,
+          "long" : 112.625722,
+          "nama" : "CITRA SUSU"
+        }
+      },
+      "protein" : 7.86,
+      "userid" : {
+        "DmiQX4tcUybn4Fnca8ez0m0ZG8R2" : "DmiQX4tcUybn4Fnca8ez0m0ZG8R2",
+        "dmn3P2V2SwOESxVb14jSBiIUf5r1" : "dmn3P2V2SwOESxVb14jSBiIUf5r1",
+        "tSyOvkw13mfjp6kRsF4xAvUluBP2" : "tSyOvkw13mfjp6kRsF4xAvUluBP2"
+      }
+    },
+    "Food_7" : {
+      "deskripsi" : "Makanan pasta yang dipanggang di oven dan merupakan makanan tradisional Italia. Biasaya berisi daging panggang, sayur-sayuran, ayam, makanan laut dan sebagainya sesuai selera",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Flasagna.jpg?alt=media&token=eaae367a-05b3-420a-a288-57ff848262b1",
+      "kalori" : 508,
+      "karbohidrat" : 52.8,
+      "kategori" : "lunch",
+      "lemak" : 19.7,
+      "nama" : "Low-Calorie Lasagna",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : "20000",
+          "lat" : -7.976446,
+          "long" : 112.627721,
+          "nama" : "Illy Cafe Lai Lai"
+        },
+        "penjual2" : {
+          "harga" : 17500,
+          "lat" : -7.962804,
+          "long" : 112.622745,
+          "nama" : "Warung Pasta Malang"
+        },
+        "penjual3" : {
+          "harga" : 18000,
+          "lat" : -7.938545,
+          "long" : 112.629801,
+          "nama" : "Calories"
+        }
+      },
+      "protein" : 29.8
+    },
+    "Food_8" : {
+      "deskripsi" : "Sandwich dalam bahasa Inggris (terkadang dikenal juga dengan roti isi), adalah makanan yang biasanya terdiri dari sayuran, keju atau daging yang diiris, diletakkan di atas atau di antara irisan roti, atau lebih tepatnya makanan apapun di mana dua atau lebih potongan roti berfungsi sebagai wadah atau pembungkus untuk jenis makanan lain.",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fsandwich.jpg?alt=media&token=0d67575d-e57d-487f-9913-b1f1859da108",
+      "kalori" : 233,
+      "karbohidrat" : 33.35,
+      "kategori" : "lunch",
+      "lemak" : 15.58,
+      "nama" : "Sandwich",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 8000,
+          "lat" : -7.958024,
+          "long" : 112.611442,
+          "nama" : "Urban Deli Sandwiches"
+        },
+        "penjual2" : {
+          "harga" : 110000,
+          "lat" : -7.974358,
+          "long" : 112.613122,
+          "nama" : "Avi Pukis"
+        },
+        "penjual3" : {
+          "harga" : 15000,
+          "lat" : -7.966213,
+          "long" : 112.610677,
+          "nama" : "Sub Station Sandwich Malang"
+        }
+      },
+      "protein" : 20.69
+    },
+    "Food_9" : {
+      "Deskripsi" : "Makanan yang menyehatkan, banyak serat, kaya nutrisi, rendah kalori yang baik untuk tubuh",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/foods%2Fsalad.jpg?alt=media&token=fedd3586-d06a-4a40-81c7-019e08337cad",
+      "kalori" : 81,
+      "karbohidrat" : 3.6,
+      "kategori" : "breakfast",
+      "lemak" : 3.1,
+      "nama" : "Salad",
+      "penjual" : {
+        "penjual1" : {
+          "harga" : 15000,
+          "lat" : -7.886915,
+          "long" : 112.673257,
+          "nama" : "Salad Buah Malang"
+        },
+        "penjual2" : {
+          "harga" : 250000,
+          "lat" : -7.886912,
+          "long" : 112.673256,
+          "nama" : "Mom Anna"
+        },
+        "penjual3" : {
+          "harga" : 38000,
+          "lat" : -7.951764,
+          "long" : 112.639336,
+          "nama" : "Pizza Hut Ciliwung"
+        }
+      },
+      "protein" : 10
+    }
+  },
+  "Tips" : {
+    "tips1" : {
+      "nama" : "kurus",
+      "resiko" : "Memiliki resiko mengidap penyakit kekurangan nutrisi dan osteoporosis.",
+      "umur" : {
+        "10" : {
+          "tips" : "Cara terbaik untuk menambah berat badan tergantung kepada hal apa yang menyebabkan berat badan Anda berkurang atau rendah.  Maka sebelum memulai program peningkatan berat badan, periksa terlebih dahulu apakah berat badan Anda memang berada di bawah berat badan  normal dengan menghitung indeks massa tubuh. Jika memang berat badan Anda kurang dari yang seharusnya, maka bisa jadi Anda membutuhkan penanganan medis."
+        },
+        "20" : {
+          "tips" : "Cara terbaik untuk mendapatkan badan lebih berisi adalah bukan dengan mengonsumsi sebanyak mungkin makanan berlemak dan berkadar gula tinggi, melainkan memilih makanan sehat dengan kandungan gizi seimbang yang tepat.  Konsumsi lebih banyak buah-buahan, sayur-sayuran, kacang-kacangan, serta sumber protein tanpa lemak seperti tahu, tempe, dan daging ayam tanpa kulit."
+        },
+        "30" : {
+          "tips" : "Olahraga yang melatih kekuatan dapat meningkatkan berat badan dengan cara membentuk otot Anda. Selain itu, olahraga juga bermanfaat untuk membangkitkan nafsu makan Anda. Aerobik, angkat beban, bersepeda statis, berenang, dan berlari adalah olahraga yang bisa dicoba. Padukan olahraga dengan konsumsi camilan yang kaya protein, seperti susu cokelat rendah lemak. Minuman ini juga dapat dikonsumsi sebelum tidur."
+        },
+        "40" : {
+          "tips" : "Kurangnya waktu dan kualitas tidur berpotensi membuat metabolisme tubuh tidak dapat bekerja dengan baik. Tidur dan bangun tepat waktu dapat membantu menjaga berat badan."
+        }
+      }
+    },
+    "tips2" : {
+      "nama" : "normal",
+      "resiko" : "Resiko rendah: Teruskan olahraga dan pola makan yang sehat.",
+      "umur" : {
+        "10" : {
+          "tips" : "Pakar kesehatan menyarankan kita untuk mulai mengurangi asupan makanan berlemak, kaya kandungan garam, gulam dan berminyak. Selain itu, ada baiknya kita semakin memperbanyak asupan sayuran dan buah-buahan yang kaya serat dan nutrisi lain yang bisa membantu menjaga berat badan."
+        },
+        "20" : {
+          "tips" : "Meskipun terlihat sederhana, dalam realitanya banyak orang yang tidak mampu mencukupi kebutuhan air putih dalam sehari yang sebenarnya hanya 8 gelas saja. Dengan mencukupi kebutuhan air putih, kita bisa membantu proses metabolisme tubuh berjalan dengan lancar sehingga mampu mencegah kenaikan berat badan. Jangan ganti air putih dengan minuman lain, apalagi minuman yang manis karena minuman ini justru bisa memberikan banyak dampak buruk bagi berat badan."
+        },
+        "30" : {
+          "tips" : "Karena berbagai kesibukan, banyak orang yang hanya sempat berolahraga sekali atau dua kali dalam sepekan. Beberapa jenis olahraga seperti jogging, sprint, atau skipping bisa kita pilih agar bisa tetap membakar kalori di tengah kesibukan Anda."
+        },
+        "40" : {
+          "tips" : "Banyak orang yang tidak menyadari pentingnya waktu tidur yang cukup untuk menjaga berat badan tetap ideal. Jika kita kurang tidur karena stress, maka sistem metabolisme tubuh tidak akan benar-benar membakar kalori dengan maksimal dan akhirnya meningkatkan berat badan."
+        }
+      }
+    },
+    "tips3" : {
+      "nama" : "gemuk",
+      "resiko" : "Resiko Menengah: Resiko Anda untuk mengidap penyakit diabetes tipe 2 dan penyakit kronis lain adalah tinggi. Berdiskusilah dengan ahli kesehatan tentang berat badan ideal Anda dan bagaimana cara mengubah polah hidup untuk menjadi lebih sehat.",
+      "umur" : {
+        "10" : {
+          "tips" : "Makanan tinggi gula, garam, minyak, dan lemak juga berkalori tinggi sehingga buruk bagi tubuh. Ingat, makanan berkalori tinggi adalah awal mula berbagai masalah kesehatan, dari kenaikan berat badan, diabetes, hipertensi, kolesterol tinggi, hingga penyakit jantung.   Kementerian Kesehatan RI merekomendasikan kita untuk membatasi porsi gula, garam, dan lemak dengan prinsip G4G1L5 agar lebih mudah diingat. Panduannya yaitu, gula 4 sdm per hari, garam 1 sendok teh per hari, dan lemak sebanyak 5 sendok makan/hari.  Sebagai langkah mengurangi gula, Anda bisa mengganti gula pasir atau gula murni dengan pemanis rendah kalori. Pemanis alternatif cenderung lebih aman  bagi kadar gula darah Anda."
+        },
+        "20" : {
+          "tips" : "\"Berdiskusilah dengan ahli kesehatan tentang berat badan ideal Anda dan bagaimana cara mengubah polah hidup untuk menjadi lebih sehat.\"Yoghurt bagus untuk menghilangkan lemak di tubuh\"\""
+        },
+        "30" : {
+          "tips" : "Olahraga adalah cara diet sehat yang paling mudah untuk Anda lakukan. Mengatur porsi makan saja tidak akan sukses menurunkan berat badan jika tidak dibarengi olahraga rutin. Pasalnya, tubuh Anda tetap perlu membakar ekstra kalori yang masuk ke dalam tubuh, sekaligus juga membentuk otot. Kalau bukan dengan olahraga, dengan cara apa lagi lemak tubuh bisa dihilangkan?  Jadi, mulailah membiasakan diri untuk olahraga secara rutin setidaknya 30 menit tiap hari. Nah, untuk memulainya, Anda bisa kok berjalan-jalan santai atau jogging selama 30 menit di area rumah.  Mulai sekarang jadikan olahraga sebagai kebutuhan, bukan lagi kewajiban."
+        },
+        "40" : {
+          "tips" : "Di samping mengatur pola makan dan olahraga rutin, rencana diet Anda akan berjalan lebih baik jika Anda juga menerapkan pola hidup yang sehat secara keseluruhan. Apa saja pola hidup yang baik itu?  Ada berbagai cara dapat Anda lakukan. Misalnya tidur cukup 7-8 jam per malam, sebisa mungkin hindari lembur dan begadang. Lalu, hindari mengonsumsi alkohol dan jangan merokok. Hal-hal tersebut akan membantu diet sehat Anda berjalan mudah."
+        }
+      }
+    },
+    "tips4" : {
+      "nama" : "obesitas",
+      "resiko" : "Resiko Tinggi: Berat badan Anda berada jauh diatas sehat. Resiko terhadap penyakit kronis seperti penyakit jantung dan diabetes tipe 2 akan meningkat, dan kualitas hidup Anda secara keseluruhan akan menurun. Berdiskusilah dengan ahli kesehatan tentang berat badan ideal Anda dan bagaimana cara mengubah polah hidup untuk menjadi lebih sehat.",
+      "umur" : {
+        "10" : {
+          "tips" : "Untuk asupan karbohidrat, pilihlah bahan makanan yang mengandung karbohidrat kompleks yang penuh serat seperti oats, pasta dari gandum, nasi merah, quinoa, roti gandum dan kentang. Hindari pemilihan jenis karbohidrat yang mengandung gula sederhana.  Tidak lupa, sayur dan buah sebagai komponen makanan paling penting untuk orang obesitas. Selain mengandung karbohidrat sebagai energi, sayur dan buah juga mengandung serat yang sangat dibutuhkan tubuh."
+        },
+        "20" : {
+          "tips" : "Ada 2 jenis protein yang bisa dikonsumsi, protein nabati, dan protein hewani. Protein nabati seperti tahu dan tempe yang sering Anda jumpai. Sedangkan untuk protein hewani pilihlah jenis protein yang cenderung rendah lemak, seperti ikan dan daging ayam tanpa kulit.  Kurangi konsumsi daging merah. jeroan binatang, dan sumber makanan yang mengandung protein dengan digoreng-goreng."
+        },
+        "30" : {
+          "tips" : "Sumber lemak biasanya didapatkan dari berbagai jenis minyak. Maka itu, pilihlah jenis minyak yang sehat seperti minyak zaitun, minyak canola, dan minyak alpukat.  Hindari makanan yang digoreng, karena mengandung lemak trans dan lemak jenuh tinggi yang bisa menambahkan timbunan lemak tubuh."
+        },
+        "40" : {
+          "tips" : "Pilihlah jenis olahraga yang dijalani dengan kombinasi olahraga aerobik dan olahraga yang melatih kekuatan otot. Selain itu, beberapa orang juga memerlukan terapi perilaku untuk mengatur gaya hidupnya menjadi lebih baik.  Dalam kasus tertentu diperlukan obat atau operasi untuk mengatasi kegemukan. Meski begitu tidak semua kasus obesitas akan langsung diberikan intervensi dengan kedua pilihan ini. Hal ini disesuaikan dengan kondisi keparahan obesitas serta komplikasi yang muncul akibat kondisi obesitas ini"
+        }
+      }
+    }
+  },
+  "Users" : {
+    "2iNtzW9PMbV4fZbmcS8li9Xgwa03" : {
+      "alamat" : "kkkkkkkk",
+      "berat" : 0,
+      "email" : "feri5@gmail.com",
+      "nama" : "Feri Setyo",
+      "telp" : "18",
+      "tinggi" : 0,
+      "umur" : 18
+    },
+    "51cD2HjMcxNTO7hlGHhbBUInFqz2" : {
+      "berat" : 82,
+      "email" : "ferisetyo1@gmail.com",
+      "nama" : "Feri Setyo",
+      "tinggi" : 125,
+      "umur" : 21
+    },
+    "CxweNKCFoLdWJ0A4NgAmEZU70Vr2" : {
+      "alamat" : "asdojwqoqw",
+      "berat" : 62,
+      "bmi" : 23.152,
+      "email" : "test@gmail.com",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/profile%2F1557065796590.jpg?alt=media&token=b4317bde-2ff1-4f68-be5d-e6bf8cbf2fba",
+      "nama" : "tes",
+      "telp" : "12",
+      "tinggi" : 168,
+      "umur" : 12
+    },
+    "Db9W166P5tZ2ViymBaHUJWty1aI3" : {
+      "berat" : 0,
+      "email" : "feri1@gmail.com",
+      "nama" : "feri setyo e",
+      "tinggi" : 0,
+      "umur" : 0
+    },
+    "DmiQX4tcUybn4Fnca8ez0m0ZG8R2" : {
+      "alamat" : "malang",
+      "berat" : 47,
+      "bio" : "aku ingin menjadi....",
+      "bmi" : 16.262975778546714,
+      "email" : "hhaa@gmail.com",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/profile%2F1557113191871.jpg?alt=media&token=27c22ee1-cda6-4765-afd6-a46347ff3ccf",
+      "nama" : "haha",
+      "telp" : "18",
+      "tinggi" : 170,
+      "umur" : 17
+    },
+    "ErZToa7KNIblsFdFdDEnmUOSNNl2" : {
+      "berat" : 55,
+      "bmi" : 17.959183673469386,
+      "email" : "tot909@gmail.com",
+      "nama" : "tot",
+      "tinggi" : 175,
+      "umur" : 0
+    },
+    "P4jCSwVjSmXVSM0s5mbSxRYbrt03" : {
+      "berat" : 0,
+      "email" : "feri4@gmail.com",
+      "nama" : "yyyyy",
+      "tinggi" : 0,
+      "umur" : 0
+    },
+    "dmn3P2V2SwOESxVb14jSBiIUf5r1" : {
+      "alamat" : "jl apasaja",
+      "berat" : 55,
+      "bmi" : 21.484375,
+      "email" : "pram@g.com",
+      "nama" : "pram",
+      "telp" : "20",
+      "tinggi" : 160,
+      "umur" : 20
+    },
+    "n5eDu6FyV2N5igNwU8uld6TfJUy1" : {
+      "alamat" : "malang",
+      "berat" : 47,
+      "bmi" : 16.262975778546714,
+      "email" : "ferisetyo4@gmail.com",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/profile%2F1557118487626.jpg?alt=media&token=759795d1-43ef-48fb-bb7c-084cb63b0f64",
+      "nama" : "feriiii",
+      "telp" : "17",
+      "tinggi" : 170,
+      "umur" : 17
+    },
+    "tSyOvkw13mfjp6kRsF4xAvUluBP2" : {
+      "alamat" : "hbhbhb",
+      "berat" : 46,
+      "bio" : "halllooo",
+      "bmi" : 15.916955017301039,
+      "email" : "feroij@gmail.com",
+      "img_url" : "https://firebasestorage.googleapis.com/v0/b/mydietplanner-7f345.appspot.com/o/profile%2F1557062005683.jpg?alt=media&token=ae61eb11-7dbe-4e40-93e9-dc68911ee6ed",
+      "nama" : "feri setyo",
+      "telp" : "12",
+      "tinggi" : 170,
+      "umur" : 12
+    },
+    "ugaPYgFhyaZUNb2nrNwF7RkWNpa2" : {
+      "berat" : 55,
+      "email" : "p@y.com",
+      "nama" : "ahha",
+      "tinggi" : 156,
+      "umur" : 0,
+      "wishlist" : 0
+    }
+  }
+}
